@@ -11,26 +11,53 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      background: #111;
-      color: #fff;
+      background: #111111;
+      color: #ffffff;
       font-family: Arial, Helvetica, sans-serif;
+    }
+
+    button,
+    textarea {
+      font-family: inherit;
     }
 
     .page {
       min-height: 100vh;
-      background:
-        linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.78)),
-        #1a1a1a;
+      background: #111111;
     }
 
+    /* =========================
+       HERO
+    ========================= */
+
     .hero {
-      min-height: 42vh;
+      min-height: 520px;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.15) 0%,
+          rgba(0, 0, 0, 0.30) 45%,
+          rgba(0, 0, 0, 0.88) 100%
+        ),
+        url("ONIKU-food.jpg");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
       display: flex;
       align-items: flex-end;
-      padding: 40px 22px 32px;
-      border-bottom: 1px solid rgba(255,255,255,.12);
+
+      padding: 40px 22px 42px;
+
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .hero-inner {
@@ -39,122 +66,245 @@
       margin: 0 auto;
     }
 
-    .brand {
-      font-size: 14px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      opacity: .75;
-      margin-bottom: 12px;
+    .logo {
+      width: 190px;
+      max-width: 52%;
+      height: auto;
+      display: block;
+      margin-bottom: 24px;
     }
 
-    h1 {
+    .hero h1 {
       margin: 0;
-      font-size: clamp(36px, 9vw, 64px);
-      line-height: 1;
-      letter-spacing: -1px;
+
+      font-size: clamp(38px, 9vw, 64px);
+      line-height: 1.02;
+      letter-spacing: -1.5px;
+
+      font-weight: 700;
     }
 
     .subtitle {
-      margin-top: 14px;
-      color: rgba(255,255,255,.72);
+      margin-top: 15px;
+
+      max-width: 520px;
+
+      color: rgba(255,255,255,0.82);
+
       font-size: 16px;
-      line-height: 1.6;
-      max-width: 540px;
+      line-height: 1.65;
     }
 
+    /* =========================
+       MAIN
+    ========================= */
+
     .container {
+      width: 100%;
       max-width: 680px;
+
       margin: 0 auto;
-      padding: 34px 20px 70px;
+
+      padding: 40px 20px 80px;
+    }
+
+    .intro {
+      margin-bottom: 42px;
+
+      color: rgba(255,255,255,0.66);
+
+      font-size: 15px;
+      line-height: 1.7;
     }
 
     .section {
-      margin-bottom: 38px;
+      margin-bottom: 42px;
     }
 
     .step {
-      font-size: 12px;
+      margin-bottom: 9px;
+
+      color: #d4ae72;
+
+      font-size: 11px;
+      font-weight: 700;
+
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #c9a46b;
-      margin-bottom: 8px;
     }
 
     .section h2 {
-      margin: 0 0 18px;
-      font-size: 24px;
+      margin: 0 0 8px;
+
+      font-size: 25px;
+      line-height: 1.25;
+
+      font-weight: 700;
     }
+
+    .section-description {
+      margin-bottom: 20px;
+
+      color: rgba(255,255,255,0.48);
+
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    /* =========================
+       OPTIONS
+    ========================= */
 
     .options {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
       gap: 12px;
     }
 
     .option {
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.05);
-      color: #fff;
+      min-height: 60px;
+
+      padding: 16px 15px;
+
+      border: 1px solid rgba(255,255,255,0.14);
       border-radius: 14px;
-      padding: 16px 14px;
+
+      background: rgba(255,255,255,0.045);
+
+      color: rgba(255,255,255,0.9);
+
       cursor: pointer;
+
       text-align: left;
-      transition: .2s ease;
+
       font-size: 15px;
+      line-height: 1.35;
+
+      transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease;
     }
 
     .option:hover {
-      border-color: rgba(255,255,255,.35);
-      background: rgba(255,255,255,.08);
+      background: rgba(255,255,255,0.085);
+      border-color: rgba(255,255,255,0.32);
+    }
+
+    .option:active {
+      transform: scale(0.985);
     }
 
     .option.selected {
-      background: #c9a46b;
-      border-color: #c9a46b;
-      color: #111;
+      background: #d0aa6c;
+      border-color: #d0aa6c;
+
+      color: #111111;
+
       font-weight: 700;
     }
+
+    /* =========================
+       TEXTAREA
+    ========================= */
 
     textarea {
       width: 100%;
-      min-height: 110px;
-      resize: vertical;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
-      color: #fff;
+
+      min-height: 118px;
+
       padding: 16px;
-      font-size: 15px;
+
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 14px;
+
       outline: none;
+
+      resize: vertical;
+
+      background: rgba(255,255,255,0.05);
+
+      color: #ffffff;
+
+      font-size: 16px;
+      line-height: 1.55;
+
+      transition: border-color 0.18s ease;
+    }
+
+    textarea:focus {
+      border-color: #d0aa6c;
     }
 
     textarea::placeholder {
-      color: rgba(255,255,255,.4);
+      color: rgba(255,255,255,0.32);
     }
+
+    .character-count {
+      margin-top: 8px;
+
+      text-align: right;
+
+      color: rgba(255,255,255,0.35);
+
+      font-size: 12px;
+    }
+
+    /* =========================
+       GENERATE BUTTON
+    ========================= */
 
     .primary-btn {
       width: 100%;
-      border: 0;
+
+      min-height: 58px;
+
+      padding: 16px 20px;
+
+      border: none;
       border-radius: 14px;
-      padding: 17px 18px;
-      background: #c9a46b;
-      color: #111;
+
+      background: #d0aa6c;
+
+      color: #111111;
+
       font-size: 16px;
       font-weight: 700;
+
       cursor: pointer;
+
+      transition:
+        opacity 0.18s ease,
+        transform 0.18s ease;
     }
 
     .primary-btn:hover {
-      opacity: .92;
+      opacity: 0.94;
     }
 
+    .primary-btn:active {
+      transform: scale(0.99);
+    }
+
+    /* =========================
+       RESULT
+    ========================= */
+
     .result-card {
-      margin-top: 24px;
       display: none;
-      background: #f5f3ef;
-      color: #191919;
+
+      margin-top: 28px;
+
+      padding: 24px;
+
       border-radius: 18px;
-      padding: 22px;
+
+      background: #f4f1eb;
+
+      color: #191919;
     }
 
     .result-card.show {
@@ -162,68 +312,231 @@
     }
 
     .result-label {
-      font-size: 12px;
-      letter-spacing: 1.5px;
+      margin-bottom: 7px;
+
+      color: #857765;
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: 1.8px;
       text-transform: uppercase;
-      color: #777;
-      margin-bottom: 10px;
+    }
+
+    .result-title {
+      margin: 0 0 16px;
+
+      font-size: 22px;
+      line-height: 1.3;
+
+      color: #191919;
     }
 
     #reviewOutput {
-      width: 100%;
-      min-height: 170px;
-      color: #222;
-      background: #fff;
-      border: 1px solid #ddd;
+      min-height: 210px;
+
+      background: #ffffff;
+
+      color: #222222;
+
+      border: 1px solid #d9d5ce;
+
       font-size: 16px;
       line-height: 1.65;
     }
 
-    .actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 12px;
+    #reviewOutput:focus {
+      border-color: #b48d56;
     }
 
-    .secondary-btn {
-      border: 1px solid #ccc;
-      background: #fff;
-      color: #222;
-      border-radius: 12px;
-      padding: 14px;
-      font-weight: 600;
-      cursor: pointer;
-    }
+    .result-help {
+      margin-top: 8px;
 
-    .yelp-btn {
-      margin-top: 12px;
-      display: block;
-      text-decoration: none;
-      text-align: center;
-      border-radius: 12px;
-      padding: 15px;
-      background: #d32323;
-      color: white;
-      font-weight: 700;
-    }
+      color: #888078;
 
-    .tip {
-      margin-top: 12px;
-      color: #777;
-      font-size: 13px;
+      font-size: 12px;
       line-height: 1.5;
     }
 
-    @media (max-width: 520px) {
+    /* =========================
+       RESULT BUTTONS
+    ========================= */
+
+    .actions {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 10px;
+
+      margin-top: 14px;
+    }
+
+    .secondary-btn {
+      min-height: 50px;
+
+      padding: 13px 14px;
+
+      border: 1px solid #d4d0ca;
+      border-radius: 12px;
+
+      background: #ffffff;
+
+      color: #222222;
+
+      font-size: 14px;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition:
+        background 0.18s ease,
+        transform 0.18s ease;
+    }
+
+    .secondary-btn:hover {
+      background: #f8f7f4;
+    }
+
+    .secondary-btn:active {
+      transform: scale(0.985);
+    }
+
+    .yelp-btn {
+      display: block;
+
+      margin-top: 12px;
+
+      min-height: 52px;
+
+      padding: 15px 16px;
+
+      border-radius: 12px;
+
+      text-align: center;
+      text-decoration: none;
+
+      background: #d32323;
+
+      color: #ffffff;
+
+      font-size: 15px;
+      font-weight: 700;
+
+      transition:
+        opacity 0.18s ease,
+        transform 0.18s ease;
+    }
+
+    .yelp-btn:hover {
+      opacity: 0.93;
+    }
+
+    .yelp-btn:active {
+      transform: scale(0.99);
+    }
+
+    .copy-message {
+      min-height: 18px;
+
+      margin-top: 10px;
+
+      color: #5e875e;
+
+      font-size: 12px;
+      font-weight: 600;
+
+      text-align: center;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer {
+      margin-top: 48px;
+
+      padding-top: 24px;
+
+      border-top: 1px solid rgba(255,255,255,0.08);
+
+      color: rgba(255,255,255,0.28);
+
+      text-align: center;
+
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 560px) {
+
+      .hero {
+        min-height: 430px;
+
+        padding:
+          30px
+          20px
+          34px;
+
+        background-position: center;
+      }
+
+      .logo {
+        width: 165px;
+        max-width: 52%;
+
+        margin-bottom: 20px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .subtitle {
+        font-size: 15px;
+      }
+
+      .container {
+        padding:
+          34px
+          17px
+          65px;
+      }
+
+      .section {
+        margin-bottom: 38px;
+      }
+
+      .section h2 {
+        font-size: 23px;
+      }
+
       .options {
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        min-height: 34vh;
+      .option {
+        min-height: 56px;
       }
+
+      .result-card {
+        padding: 19px;
+      }
+
     }
+
+    @media (max-width: 360px) {
+
+      .actions {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
   </style>
 </head>
 
@@ -231,117 +544,275 @@
 
 <div class="page">
 
+  <!-- =========================
+       HERO
+  ========================== -->
+
   <section class="hero">
+
     <div class="hero-inner">
-      <div class="brand">ONIKU PREMIUM AYCE BBQ</div>
-      <h1>How was your visit?</h1>
+
+      <img
+        src="ONIKU-logo.png"
+        class="logo"
+        alt="ONIKU Premium AYCE BBQ"
+      />
+
+      <h1>
+        How was your visit?
+      </h1>
+
       <div class="subtitle">
         Tell us what stood out during your experience.
-        We’ll help you turn it into a natural review.
+        We’ll help turn your selections into a natural review.
       </div>
+
     </div>
+
   </section>
+
+
+  <!-- =========================
+       MAIN CONTENT
+  ========================== -->
 
   <main class="container">
 
-    <section class="section">
-      <div class="step">Step 1</div>
-      <h2>What stood out to you?</h2>
+    <div class="intro">
+      Choose the things you enjoyed during your visit.
+      You can select more than one option in each section.
+    </div>
 
-      <div class="options" id="experienceOptions">
-        <button class="option" data-value="meat quality">
+
+    <!-- STEP 1 -->
+
+    <section class="section">
+
+      <div class="step">
+        Step 1
+      </div>
+
+      <h2>
+        What stood out to you?
+      </h2>
+
+      <div class="section-description">
+        Select everything that made your experience memorable.
+      </div>
+
+      <div
+        class="options"
+        id="experienceOptions"
+      >
+
+        <button
+          type="button"
+          class="option"
+          data-value="meatQuality"
+        >
           🥩 High-Quality Meat
         </button>
 
-        <button class="option" data-value="service">
+        <button
+          type="button"
+          class="option"
+          data-value="service"
+        >
           🙌 Friendly Service
         </button>
 
-        <button class="option" data-value="variety">
+        <button
+          type="button"
+          class="option"
+          data-value="variety"
+        >
           🍽 Great Variety
         </button>
 
-        <button class="option" data-value="atmosphere">
+        <button
+          type="button"
+          class="option"
+          data-value="atmosphere"
+        >
           ✨ Nice Atmosphere
         </button>
 
-        <button class="option" data-value="value">
+        <button
+          type="button"
+          class="option"
+          data-value="value"
+        >
           💯 Good Value
         </button>
 
-        <button class="option" data-value="freshness">
+        <button
+          type="button"
+          class="option"
+          data-value="freshness"
+        >
           🌿 Fresh Ingredients
         </button>
+
       </div>
+
     </section>
 
 
+    <!-- STEP 2 -->
+
     <section class="section">
-      <div class="step">Step 2</div>
-      <h2>What did you enjoy?</h2>
 
-      <div class="options" id="foodOptions">
+      <div class="step">
+        Step 2
+      </div>
 
-        <button class="option" data-value="premium cuts">
+      <h2>
+        What did you enjoy?
+      </h2>
+
+      <div class="section-description">
+        Pick the parts of the menu you enjoyed most.
+      </div>
+
+      <div
+        class="options"
+        id="foodOptions"
+      >
+
+        <button
+          type="button"
+          class="option"
+          data-value="premiumCuts"
+        >
           Premium Cuts
         </button>
 
-        <button class="option" data-value="beef">
+        <button
+          type="button"
+          class="option"
+          data-value="beef"
+        >
           Beef
         </button>
 
-        <button class="option" data-value="pork">
+        <button
+          type="button"
+          class="option"
+          data-value="pork"
+        >
           Pork
         </button>
 
-        <button class="option" data-value="seafood">
+        <button
+          type="button"
+          class="option"
+          data-value="seafood"
+        >
           Seafood
         </button>
 
-        <button class="option" data-value="side dishes">
+        <button
+          type="button"
+          class="option"
+          data-value="sideDishes"
+        >
           Side Dishes
         </button>
 
-        <button class="option" data-value="overall selection">
+        <button
+          type="button"
+          class="option"
+          data-value="selection"
+        >
           Overall Selection
         </button>
 
       </div>
+
     </section>
 
 
+    <!-- STEP 3 -->
+
     <section class="section">
-      <div class="step">Step 3 · Optional</div>
-      <h2>Anything else you want to mention?</h2>
+
+      <div class="step">
+        Step 3 · Optional
+      </div>
+
+      <h2>
+        Anything else you want to mention?
+      </h2>
+
+      <div class="section-description">
+        Add a personal detail to make your review feel even more like you.
+      </div>
 
       <textarea
         id="extraInput"
         maxlength="220"
-        placeholder="Example: Came here for dinner with friends and really liked the brisket..."
+        placeholder="Example: Came here with friends for dinner and really liked the brisket..."
       ></textarea>
+
+      <div
+        class="character-count"
+        id="characterCount"
+      >
+        0 / 220
+      </div>
+
     </section>
 
 
-    <button class="primary-btn" onclick="generateReview()">
+    <!-- GENERATE -->
+
+    <button
+      type="button"
+      class="primary-btn"
+      id="generateButton"
+    >
       Generate My Review
     </button>
 
 
-    <div class="result-card" id="resultCard">
+    <!-- RESULT -->
+
+    <div
+      class="result-card"
+      id="resultCard"
+    >
 
       <div class="result-label">
         Your Review
       </div>
 
-      <textarea id="reviewOutput"></textarea>
+      <h3 class="result-title">
+        Ready to share
+      </h3>
+
+      <textarea
+        id="reviewOutput"
+      ></textarea>
+
+      <div class="result-help">
+        Feel free to edit the review above so it sounds exactly like you.
+      </div>
 
       <div class="actions">
 
-        <button class="secondary-btn" onclick="copyReview()">
+        <button
+          type="button"
+          class="secondary-btn"
+          id="copyButton"
+        >
           Copy Review
         </button>
 
-        <button class="secondary-btn" onclick="generateReview()">
+        <button
+          type="button"
+          class="secondary-btn"
+          id="anotherButton"
+        >
           Try Another
         </button>
 
@@ -351,14 +822,21 @@
         class="yelp-btn"
         href="https://www.yelp.com/writeareview/biz/tlzXD83PhRw1KDtEc3SqFg?review_origin=review-feed-war-widget"
         target="_blank"
+        rel="noopener noreferrer"
       >
         Continue to Yelp
       </a>
 
-      <div class="tip">
-        You can edit the review above before copying it.
-      </div>
+      <div
+        class="copy-message"
+        id="copyMessage"
+      ></div>
 
+    </div>
+
+
+    <div class="footer">
+      Thank you for dining with ONIKU.
     </div>
 
   </main>
@@ -368,452 +846,974 @@
 
 <script>
 
-  const experienceButtons =
-    document.querySelectorAll("#experienceOptions .option");
-
-  const foodButtons =
-    document.querySelectorAll("#foodOptions .option");
-
-
-  experienceButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-      button.classList.toggle("selected");
-
-    });
-
-  });
-
-
-  foodButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-      button.classList.toggle("selected");
-
-    });
-
-  });
-
+  /* =========================
+     HELPERS
+  ========================== */
 
   function randomItem(array) {
+    return array[
+      Math.floor(Math.random() * array.length)
+    ];
+  }
 
-    return array[Math.floor(Math.random() * array.length)];
+
+  function shuffle(array) {
+
+    const cloned = [...array];
+
+    for (
+      let i = cloned.length - 1;
+      i > 0;
+      i--
+    ) {
+
+      const j =
+        Math.floor(
+          Math.random() * (i + 1)
+        );
+
+      [
+        cloned[i],
+        cloned[j]
+      ] = [
+        cloned[j],
+        cloned[i]
+      ];
+
+    }
+
+    return cloned;
 
   }
 
 
-  const openingsShort = [
+  /* =========================
+     OPTION SELECTING
+  ========================== */
 
-    "Really enjoyed our meal at ONIKU.",
-    "Had a great dinner at ONIKU.",
-    "Really good AYCE BBQ experience.",
-    "We had such a good time here.",
-    "ONIKU was a really nice surprise.",
-    "Definitely enjoyed our visit to ONIKU.",
-    "Had a really solid experience here.",
-    "Really liked this place.",
-    "Great spot for AYCE BBQ.",
-    "We came here for dinner and really enjoyed it.",
-    "Very happy with our experience at ONIKU.",
-    "This was a great find for BBQ."
-
-  ];
+  const allOptionButtons =
+    document.querySelectorAll(".option");
 
 
-  const openingsCasual = [
+  allOptionButtons.forEach(
+    button => {
 
-    "Came here for dinner and ended up having a really good experience.",
-    "We tried ONIKU for the first time and were really impressed.",
-    "Had dinner here with friends and everyone had a great time.",
-    "We were looking for an AYCE BBQ place and decided to give ONIKU a try.",
-    "Really enjoyed our dinner here from start to finish.",
-    "This ended up being one of the better AYCE BBQ experiences we've had recently.",
-    "Stopped by ONIKU for dinner and really liked the overall experience.",
-    "We came with a group and this was a great place to share a meal.",
-    "First time trying ONIKU and we were pleasantly surprised.",
-    "Had a really enjoyable meal here and would definitely come back.",
-    "ONIKU turned out to be a great choice for dinner.",
-    "We had heard about ONIKU and finally got a chance to try it."
+      button.addEventListener(
+        "click",
+        function () {
 
-  ];
+          this.classList.toggle(
+            "selected"
+          );
+
+        }
+      );
+
+    }
+  );
 
 
-  const openingsDetailed = [
+  /* =========================
+     CHARACTER COUNT
+  ========================== */
 
-    "We recently visited ONIKU for dinner and had a really enjoyable experience from beginning to end.",
-    "ONIKU stood out to us as a really solid option for premium all-you-can-eat BBQ.",
-    "We came to ONIKU with a group for dinner and were impressed with both the food and the overall experience.",
-    "After trying several AYCE BBQ restaurants, ONIKU ended up being one of the more memorable ones.",
-    "We visited ONIKU for a casual dinner and were pleasantly surprised by the overall quality.",
-    "ONIKU offers a really nice balance between the variety of an AYCE restaurant and a more premium dining experience.",
-    "We decided to try ONIKU for dinner and ended up enjoying the entire experience.",
-    "Our visit to ONIKU was a really positive one, especially considering how many AYCE BBQ options there are.",
-    "We had a great experience at ONIKU and appreciated the attention to both food quality and service.",
-    "ONIKU was a great choice for our group dinner and everyone found something they liked.",
-    "We recently tried ONIKU and thought the overall experience was very well put together.",
-    "From the food selection to the service, our dinner at ONIKU was a really enjoyable experience."
+  const extraInput =
+    document.getElementById(
+      "extraInput"
+    );
 
-  ];
+  const characterCount =
+    document.getElementById(
+      "characterCount"
+    );
 
+
+  extraInput.addEventListener(
+    "input",
+    function () {
+
+      characterCount.textContent =
+        this.value.length +
+        " / 220";
+
+    }
+  );
+
+
+  /* =========================
+     OPENINGS
+  ========================== */
+
+  const openings = {
+
+    short: [
+
+      "Really enjoyed our meal at ONIKU.",
+
+      "Had a great dinner at ONIKU.",
+
+      "Really good AYCE BBQ experience.",
+
+      "We had such a good time here.",
+
+      "ONIKU was a really nice surprise.",
+
+      "Definitely enjoyed our visit to ONIKU.",
+
+      "Had a really solid experience here.",
+
+      "Really liked this place.",
+
+      "Great spot for AYCE BBQ.",
+
+      "We came here for dinner and really enjoyed it.",
+
+      "Very happy with our experience at ONIKU.",
+
+      "This was a great find for BBQ."
+
+    ],
+
+
+    casual: [
+
+      "Came here for dinner and ended up having a really good experience.",
+
+      "We tried ONIKU for the first time and were really impressed.",
+
+      "Had dinner here with friends and everyone had a great time.",
+
+      "We were looking for an AYCE BBQ place and decided to give ONIKU a try.",
+
+      "Really enjoyed our dinner here from start to finish.",
+
+      "This ended up being one of the better AYCE BBQ experiences we've had recently.",
+
+      "Stopped by ONIKU for dinner and really liked the overall experience.",
+
+      "We came with a group and this was a great place to share a meal.",
+
+      "First time trying ONIKU and we were pleasantly surprised.",
+
+      "Had a really enjoyable meal here and would definitely come back.",
+
+      "ONIKU turned out to be a great choice for dinner.",
+
+      "We had heard about ONIKU and finally got a chance to try it."
+
+    ],
+
+
+    detailed: [
+
+      "We recently visited ONIKU for dinner and had a really enjoyable experience from beginning to end.",
+
+      "ONIKU stood out to us as a really solid option for premium all-you-can-eat BBQ.",
+
+      "We came to ONIKU with a group for dinner and were impressed with both the food and the overall experience.",
+
+      "After trying several AYCE BBQ restaurants, ONIKU ended up being one of the more memorable ones.",
+
+      "We visited ONIKU for a casual dinner and were pleasantly surprised by the overall quality.",
+
+      "ONIKU offers a really nice balance between the variety of an AYCE restaurant and a more premium dining experience.",
+
+      "We decided to try ONIKU for dinner and ended up enjoying the entire experience.",
+
+      "Our visit to ONIKU was a really positive one, especially considering how many AYCE BBQ options there are.",
+
+      "We had a great experience at ONIKU and appreciated the attention to both food quality and service.",
+
+      "ONIKU was a great choice for our group dinner and everyone found something they liked.",
+
+      "We recently tried ONIKU and thought the overall experience was very well put together.",
+
+      "From the food selection to the service, our dinner at ONIKU was a really enjoyable experience."
+
+    ]
+
+  };
+
+
+  /* =========================
+     EXPERIENCE PHRASES
+  ========================== */
 
   const experiencePhrases = {
 
-    "meat quality": [
+    meatQuality: [
 
       "The meat quality was noticeably better than what we usually expect from an AYCE restaurant.",
+
       "The meats tasted fresh and the quality was very solid.",
+
       "We were especially impressed with the quality of the meat.",
+
       "For an all-you-can-eat place, the meat quality was surprisingly good.",
+
       "Everything we ordered came out fresh and well prepared.",
-      "The quality of the different cuts really stood out."
+
+      "The quality of the different cuts really stood out.",
+
+      "The meat was tender, flavorful, and consistently good throughout the meal.",
+
+      "You can tell they put more attention into the quality of the meats than a typical AYCE place.",
+
+      "The meat selection felt a little more premium than most all-you-can-eat restaurants.",
+
+      "We really liked the quality and freshness of the meats we tried.",
+
+      "The cuts were well presented and tasted fresh each time they came out.",
+
+      "The meat quality was probably one of the biggest highlights for us."
 
     ],
 
-    "service": [
+
+    service: [
 
       "The staff was friendly and attentive throughout the meal.",
+
       "Service was quick and everyone we interacted with was very nice.",
+
       "The team checked on us regularly without making us feel rushed.",
+
       "Our server was helpful and made the whole experience easy.",
+
       "The staff was welcoming and kept everything moving smoothly.",
-      "Service was attentive even when the restaurant was busy."
+
+      "Service was attentive even when the restaurant was busy.",
+
+      "Our server was really friendly and made sure we had everything we needed.",
+
+      "The service made the whole dinner feel comfortable and relaxed.",
+
+      "Everyone working there was polite and helpful.",
+
+      "The staff was responsive whenever we needed to order another round.",
+
+      "Service was efficient without feeling rushed.",
+
+      "We appreciated how attentive the team was during our meal."
 
     ],
 
-    "variety": [
+
+    variety: [
 
       "There was a great variety of options to choose from.",
+
       "The menu had plenty of choices without feeling overwhelming.",
+
       "We liked having so many different meats and sides to try.",
+
       "There was enough variety that everyone in our group found something they liked.",
+
       "The selection made it easy to try a little bit of everything.",
-      "The variety is definitely one of the strengths of this place."
+
+      "The variety is definitely one of the strengths of this place.",
+
+      "There were plenty of different options to keep the meal interesting.",
+
+      "We liked being able to switch between different cuts throughout dinner.",
+
+      "The menu had a really good mix of meats, sides, and other items.",
+
+      "There was more than enough variety for everyone at the table.",
+
+      "We never felt limited by the selection.",
+
+      "The variety made the AYCE experience much more enjoyable."
 
     ],
 
-    "atmosphere": [
+
+    atmosphere: [
 
       "The restaurant has a clean, comfortable and modern atmosphere.",
+
       "The dining space felt nice and relaxed.",
+
       "The atmosphere made it a great place for a group dinner.",
+
       "The restaurant was clean and had a nice overall vibe.",
+
       "We liked the modern and comfortable feel of the space.",
-      "The environment felt casual but still a little more polished than a typical AYCE spot."
+
+      "The environment felt casual but still a little more polished than a typical AYCE spot.",
+
+      "The restaurant felt spacious and comfortable for a longer dinner.",
+
+      "The overall atmosphere was lively without being too overwhelming.",
+
+      "The space had a clean and modern feel that matched the food well.",
+
+      "It was a comfortable place to sit, cook, and enjoy dinner with friends.",
+
+      "The dining room felt well kept and inviting.",
+
+      "We really liked the overall vibe of the restaurant."
 
     ],
 
-    "value": [
+
+    value: [
 
       "The overall quality and selection made the price feel worth it.",
+
       "We thought the value was very good for the amount and quality of food.",
+
       "For AYCE BBQ, the balance between price and quality was solid.",
+
       "It felt like good value considering the variety available.",
+
       "The overall experience felt worth the price.",
-      "For the quality of the meats and selection, we felt the pricing was reasonable."
+
+      "For the quality of the meats and selection, we felt the pricing was reasonable.",
+
+      "Considering how much variety there was, the overall value felt very fair.",
+
+      "We felt like we got good quality for an all-you-can-eat price.",
+
+      "The combination of quality and quantity made the meal feel worth it.",
+
+      "The pricing made sense for the selection and overall dining experience.",
+
+      "For a group dinner, the value worked out really well.",
+
+      "It felt like a good balance between a premium experience and AYCE pricing."
 
     ],
 
-    "freshness": [
+
+    freshness: [
 
       "Everything tasted fresh and came out in good condition.",
+
       "The ingredients tasted fresh throughout the meal.",
+
       "We appreciated how fresh everything seemed.",
+
       "The food came out fresh each time we ordered.",
+
       "Freshness was consistent across the different items we tried.",
-      "Nothing felt like it had been sitting around, which we really appreciated."
+
+      "Nothing felt like it had been sitting around, which we really appreciated.",
+
+      "The ingredients looked fresh every time another round came out.",
+
+      "Everything felt freshly prepared rather than sitting out.",
+
+      "The freshness really helped the overall quality stand out.",
+
+      "Each round came out looking clean and fresh.",
+
+      "The ingredients were fresh from beginning to end.",
+
+      "We were happy with how fresh everything tasted."
 
     ]
 
   };
 
+
+  /* =========================
+     FOOD PHRASES
+  ========================== */
 
   const foodPhrases = {
 
-    "premium cuts": [
+    premiumCuts: [
 
       "The premium cuts were definitely some of our favorites.",
+
       "We especially enjoyed trying the premium meat selections.",
+
       "The premium cuts were tender and flavorful.",
+
       "A few of the premium cuts really stood out.",
-      "We would definitely order the premium selections again."
+
+      "We would definitely order the premium selections again.",
+
+      "The premium cuts made the meal feel a little more special.",
+
+      "We liked having access to some nicer cuts while still doing AYCE.",
+
+      "The premium options were a highlight of the menu.",
+
+      "Several of the premium cuts had really good flavor and texture.",
+
+      "The premium meat selection was one of the best parts of the meal."
 
     ],
 
-    "beef": [
+
+    beef: [
 
       "The beef selections were some of the highlights of the meal.",
+
       "We tried several beef options and really enjoyed them.",
+
       "The beef was flavorful and cooked nicely on the grill.",
+
       "A lot of our favorite items ended up being the beef cuts.",
-      "The beef selection was very solid."
+
+      "The beef selection was very solid.",
+
+      "We especially liked being able to try several different beef cuts.",
+
+      "The beef had good flavor even without needing a lot of seasoning.",
+
+      "Some of the beef options ended up being our favorite items of the night.",
+
+      "The different beef selections gave us plenty to try.",
+
+      "We would definitely order several of the beef options again."
 
     ],
 
-    "pork": [
+
+    pork: [
 
       "We also really enjoyed the pork selections.",
+
       "The pork grilled up nicely and had a lot of flavor.",
+
       "Several of the pork options were surprisingly good.",
+
       "The pork was tender and enjoyable.",
-      "We would definitely order the pork again."
+
+      "We would definitely order the pork again.",
+
+      "The pork selections were flavorful and cooked really well on the grill.",
+
+      "A few of the pork dishes ended up being unexpected favorites.",
+
+      "The pork was a nice change between rounds of beef.",
+
+      "We enjoyed trying the different pork options.",
+
+      "The pork selections added some really good variety to the meal."
 
     ],
 
-    "seafood": [
+
+    seafood: [
 
       "It was also nice having seafood options alongside the meats.",
+
       "We enjoyed having some seafood to mix things up.",
+
       "The seafood was a nice addition to the AYCE selection.",
+
       "We liked being able to alternate between meat and seafood.",
-      "The seafood options added even more variety to the meal."
+
+      "The seafood options added even more variety to the meal.",
+
+      "Having seafood available made the menu feel more complete.",
+
+      "We appreciated having seafood choices in addition to the BBQ meats.",
+
+      "The seafood helped break up the heavier meat dishes.",
+
+      "It was nice being able to mix seafood into the different rounds.",
+
+      "The seafood selection was a nice bonus."
 
     ],
 
-    "side dishes": [
+
+    sideDishes: [
 
       "The side dishes were also a nice part of the meal.",
+
       "We enjoyed the sides in between rounds of BBQ.",
+
       "There were some really good side dishes to go with the meats.",
+
       "The sides complemented the BBQ well.",
-      "The side dishes made the meal feel more complete."
+
+      "The side dishes made the meal feel more complete.",
+
+      "We liked having different side dishes to balance out the grilled meats.",
+
+      "Some of the sides were just as enjoyable as the BBQ itself.",
+
+      "The side dishes were a nice break between different rounds of meat.",
+
+      "There were plenty of sides to share around the table.",
+
+      "The sides worked really well with the BBQ."
 
     ],
 
-    "overall selection": [
+
+    selection: [
 
       "Overall, the selection was very well rounded.",
+
       "There was plenty to choose from throughout the meal.",
+
       "We liked being able to try so many different items.",
+
       "The overall selection made the AYCE experience more fun.",
-      "There were enough options that we never felt limited."
+
+      "There were enough options that we never felt limited.",
+
+      "The menu had enough variety to keep us trying new things throughout dinner.",
+
+      "We really liked the balance of meats, sides, and other menu options.",
+
+      "There was always something different to order for the next round.",
+
+      "The selection worked especially well for a group with different preferences.",
+
+      "The variety of choices helped make the entire dinner more enjoyable."
 
     ]
 
   };
 
 
-  const endingsShort = [
+  /* =========================
+     TRANSITION PHRASES
+  ========================== */
 
-    "Would definitely come back.",
-    "Definitely worth trying.",
-    "We'll be back.",
-    "Would happily come here again.",
-    "Great place for a group dinner.",
-    "Definitely recommend giving it a try.",
-    "Looking forward to coming back.",
-    "Overall, a really good experience.",
-    "Would recommend this place.",
-    "Glad we tried it.",
-    "We'll definitely return.",
-    "A solid spot for AYCE BBQ."
+  const transitions = [
 
-  ];
+    "Another thing we appreciated was that",
 
+    "We also liked that",
 
-  const endingsCasual = [
+    "On top of that,",
 
-    "Overall, we had a really good time and would definitely come back.",
-    "Definitely a place we'd return to when we're craving Korean BBQ.",
-    "Would happily recommend ONIKU for a dinner with friends or family.",
-    "We left full and happy, which is exactly what we wanted from an AYCE BBQ dinner.",
-    "Already looking forward to coming back and trying more of the menu.",
-    "Overall, a really solid AYCE experience and one we'd recommend.",
-    "This is definitely going into our rotation for group dinners.",
-    "Would absolutely come back again with friends.",
-    "Glad we gave this place a try and we'll definitely be back.",
-    "Overall, ONIKU delivered a really enjoyable dinner.",
-    "A great option if you want variety without sacrificing too much on quality.",
-    "Definitely worth checking out if you're looking for AYCE BBQ."
+    "Another highlight was that",
+
+    "It was also nice that",
+
+    "We especially appreciated that",
+
+    "One thing that stood out was that",
+
+    "We also noticed that"
 
   ];
 
 
-  const endingsDetailed = [
+  /* =========================
+     ENDINGS
+  ========================== */
 
-    "Overall, ONIKU did a great job balancing food quality, variety, service and value, and we would definitely return.",
-    "For anyone looking for a premium-style AYCE BBQ experience, ONIKU is definitely worth considering.",
-    "The combination of good food, attentive service and a comfortable atmosphere made this a really enjoyable dinner.",
-    "We appreciated that the experience felt a little more polished than the typical AYCE restaurant and would gladly come back.",
-    "Overall, we were very satisfied with our visit and would recommend ONIKU for both casual dinners and group outings.",
-    "Between the quality of the meats, the variety and the service, ONIKU ended up being a really solid choice.",
-    "We left feeling like the experience offered a good balance of quality and value, and we'd definitely visit again.",
-    "Overall, this was one of the better AYCE BBQ meals we've had recently and we'd be happy to return.",
-    "It's a great option for anyone who likes the flexibility of AYCE but still cares about food quality.",
-    "We had a really positive experience and would definitely recommend ONIKU to friends.",
-    "The entire meal felt well balanced, from the selection to the service, and we'd happily come back.",
-    "Overall, ONIKU is a strong option for AYCE BBQ and we're looking forward to our next visit."
+  const endings = {
 
-  ];
+    short: [
 
+      "Would definitely come back.",
+
+      "Definitely worth trying.",
+
+      "We'll be back.",
+
+      "Would happily come here again.",
+
+      "Great place for a group dinner.",
+
+      "Definitely recommend giving it a try.",
+
+      "Looking forward to coming back.",
+
+      "Overall, a really good experience.",
+
+      "Would recommend this place.",
+
+      "Glad we tried it.",
+
+      "We'll definitely return.",
+
+      "A solid spot for AYCE BBQ."
+
+    ],
+
+
+    casual: [
+
+      "Overall, we had a really good time and would definitely come back.",
+
+      "Definitely a place we'd return to when we're craving BBQ.",
+
+      "Would happily recommend ONIKU for a dinner with friends or family.",
+
+      "We left full and happy, which is exactly what we wanted from an AYCE BBQ dinner.",
+
+      "Already looking forward to coming back and trying more of the menu.",
+
+      "Overall, a really solid AYCE experience and one we'd recommend.",
+
+      "This is definitely going into our rotation for group dinners.",
+
+      "Would absolutely come back again with friends.",
+
+      "Glad we gave this place a try and we'll definitely be back.",
+
+      "Overall, ONIKU delivered a really enjoyable dinner.",
+
+      "A great option if you want variety without sacrificing too much on quality.",
+
+      "Definitely worth checking out if you're looking for AYCE BBQ."
+
+    ],
+
+
+    detailed: [
+
+      "Overall, ONIKU did a great job balancing food quality, variety, service and value, and we would definitely return.",
+
+      "For anyone looking for a premium-style AYCE BBQ experience, ONIKU is definitely worth considering.",
+
+      "The combination of good food, attentive service and a comfortable atmosphere made this a really enjoyable dinner.",
+
+      "We appreciated that the experience felt a little more polished than the typical AYCE restaurant and would gladly come back.",
+
+      "Overall, we were very satisfied with our visit and would recommend ONIKU for both casual dinners and group outings.",
+
+      "Between the quality of the meats, the variety and the service, ONIKU ended up being a really solid choice.",
+
+      "We left feeling like the experience offered a good balance of quality and value, and we'd definitely visit again.",
+
+      "Overall, this was one of the better AYCE BBQ meals we've had recently and we'd be happy to return.",
+
+      "It's a great option for anyone who likes the flexibility of AYCE but still cares about food quality.",
+
+      "We had a really positive experience and would definitely recommend ONIKU to friends.",
+
+      "The entire meal felt well balanced, from the selection to the service, and we'd happily come back.",
+
+      "Overall, ONIKU is a strong option for AYCE BBQ and we're looking forward to our next visit."
+
+    ]
+
+  };
+
+
+  /* =========================
+     GENERATE REVIEW
+  ========================== */
 
   function generateReview() {
 
-    const experiences =
-      [...document.querySelectorAll("#experienceOptions .selected")]
-      .map(button => button.dataset.value);
+    const selectedExperiences =
+      [
+        ...document.querySelectorAll(
+          "#experienceOptions .option.selected"
+        )
+      ].map(
+        button => button.dataset.value
+      );
 
 
-    const foods =
-      [...document.querySelectorAll("#foodOptions .selected")]
-      .map(button => button.dataset.value);
+    const selectedFoods =
+      [
+        ...document.querySelectorAll(
+          "#foodOptions .option.selected"
+        )
+      ].map(
+        button => button.dataset.value
+      );
 
 
     const extra =
-      document.getElementById("extraInput").value.trim();
+      extraInput.value.trim();
 
 
-    const styles = ["short", "casual", "detailed"];
+    const availableStyles = [
+      "short",
+      "casual",
+      "detailed"
+    ];
 
-    const style = randomItem(styles);
+
+    const style =
+      randomItem(
+        availableStyles
+      );
 
 
     let reviewParts = [];
 
 
-    if (style === "short") {
+    /* Opening */
 
-      reviewParts.push(randomItem(openingsShort));
-
-    }
-
-    if (style === "casual") {
-
-      reviewParts.push(randomItem(openingsCasual));
-
-    }
-
-    if (style === "detailed") {
-
-      reviewParts.push(randomItem(openingsDetailed));
-
-    }
+    reviewParts.push(
+      randomItem(
+        openings[style]
+      )
+    );
 
 
-    experiences.forEach(item => {
+    /* Combine experience phrases */
 
-      if (experiencePhrases[item]) {
-
-        reviewParts.push(
-          randomItem(experiencePhrases[item])
-        );
-
-      }
-
-    });
+    const shuffledExperiences =
+      shuffle(
+        selectedExperiences
+      );
 
 
-    foods.forEach(item => {
+    shuffledExperiences.forEach(
+      item => {
 
-      if (foodPhrases[item]) {
+        if (
+          experiencePhrases[item]
+        ) {
 
-        reviewParts.push(
-          randomItem(foodPhrases[item])
-        );
+          reviewParts.push(
+            randomItem(
+              experiencePhrases[item]
+            )
+          );
+
+        }
 
       }
+    );
 
-    });
 
+    /* Combine food phrases */
+
+    const shuffledFoods =
+      shuffle(
+        selectedFoods
+      );
+
+
+    shuffledFoods.forEach(
+      item => {
+
+        if (
+          foodPhrases[item]
+        ) {
+
+          reviewParts.push(
+            randomItem(
+              foodPhrases[item]
+            )
+          );
+
+        }
+
+      }
+    );
+
+
+    /* Extra personal text */
 
     if (extra) {
 
-      reviewParts.push(extra);
+      let formattedExtra = extra;
+
+      const finalCharacter =
+        formattedExtra.slice(-1);
+
+
+      if (
+        finalCharacter !== "." &&
+        finalCharacter !== "!" &&
+        finalCharacter !== "?"
+      ) {
+
+        formattedExtra += ".";
+
+      }
+
+
+      reviewParts.push(
+        formattedExtra
+      );
 
     }
 
 
-    if (style === "short") {
-
-      reviewParts.push(randomItem(endingsShort));
-
-    }
-
-    if (style === "casual") {
-
-      reviewParts.push(randomItem(endingsCasual));
-
-    }
-
-    if (style === "detailed") {
-
-      reviewParts.push(randomItem(endingsDetailed));
-
-    }
-
+    /* If nothing selected */
 
     if (
-      experiences.length === 0 &&
-      foods.length === 0 &&
+      selectedExperiences.length === 0 &&
+      selectedFoods.length === 0 &&
       !extra
     ) {
 
+      const defaultReviews = [
+
+        "Really enjoyed our experience at ONIKU. The food was fresh, there was a great variety to choose from, and the staff was friendly throughout the meal. For an AYCE BBQ restaurant, the overall quality was very solid. Would definitely come back.",
+
+        "Had a great dinner at ONIKU. We liked the variety of meats and everything came out fresh. The service was friendly and the restaurant had a comfortable atmosphere. Overall, it was a really enjoyable AYCE BBQ experience.",
+
+        "First time trying ONIKU and we had a really good experience. There were plenty of options to choose from and the meat quality was better than we expected for an all-you-can-eat place. Service was attentive and we'd definitely come back.",
+
+        "ONIKU was a great choice for dinner. The selection was good, the ingredients tasted fresh, and the staff was really friendly. It's a solid place to come with friends if you're in the mood for AYCE BBQ."
+
+      ];
+
+
       reviewParts = [
-
-        "Really enjoyed our experience at ONIKU. The food was fresh, there was a great variety to choose from, and the staff was friendly throughout the meal. For an AYCE BBQ restaurant, the overall quality was very solid. Would definitely come back."
-
+        randomItem(
+          defaultReviews
+        )
       ];
 
     }
 
+    else {
 
-    document.getElementById("reviewOutput").value =
-      reviewParts.join(" ");
+      reviewParts.push(
+        randomItem(
+          endings[style]
+        )
+      );
+
+    }
 
 
-    document.getElementById("resultCard")
-      .classList.add("show");
+    const finalReview =
+      reviewParts
+        .join(" ")
+        .replace(/\s+/g, " ")
+        .trim();
 
 
-    document.getElementById("resultCard")
-      .scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
+    document.getElementById(
+      "reviewOutput"
+    ).value =
+      finalReview;
+
+
+    const resultCard =
+      document.getElementById(
+        "resultCard"
+      );
+
+
+    resultCard.classList.add(
+      "show"
+    );
+
+
+    document.getElementById(
+      "copyMessage"
+    ).textContent =
+      "";
+
+
+    setTimeout(
+      function () {
+
+        resultCard.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      },
+      100
+    );
 
   }
 
 
-  function copyReview() {
+  /* =========================
+     BUTTON EVENTS
+  ========================== */
 
-    const review =
-      document.getElementById("reviewOutput");
-
-
-    review.select();
-
-    review.setSelectionRange(
-      0,
-      99999
-    );
+  document.getElementById(
+    "generateButton"
+  ).addEventListener(
+    "click",
+    generateReview
+  );
 
 
-    navigator.clipboard.writeText(
-      review.value
-    );
+  document.getElementById(
+    "anotherButton"
+  ).addEventListener(
+    "click",
+    generateReview
+  );
 
 
-    const button =
-      event.target;
+  /* =========================
+     COPY REVIEW
+  ========================== */
+
+  document.getElementById(
+    "copyButton"
+  ).addEventListener(
+    "click",
+    async function () {
+
+      const reviewOutput =
+        document.getElementById(
+          "reviewOutput"
+        );
 
 
-    const original =
-      button.innerText;
+      const text =
+        reviewOutput.value.trim();
 
 
-    button.innerText =
-      "Copied!";
+      if (!text) {
+        return;
+      }
 
 
-    setTimeout(() => {
+      try {
 
-      button.innerText =
-        original;
+        await navigator.clipboard.writeText(
+          text
+        );
 
-    }, 1500);
 
-  }
+        document.getElementById(
+          "copyMessage"
+        ).textContent =
+          "Review copied! You can now continue to Yelp.";
+
+
+        this.textContent =
+          "Copied!";
+
+
+        const button = this;
+
+
+        setTimeout(
+          function () {
+
+            button.textContent =
+              "Copy Review";
+
+          },
+          1600
+        );
+
+      }
+
+      catch (error) {
+
+        reviewOutput.focus();
+
+        reviewOutput.select();
+
+        document.execCommand(
+          "copy"
+        );
+
+
+        document.getElementById(
+          "copyMessage"
+        ).textContent =
+          "Review copied! You can now continue to Yelp.";
+
+      }
+
+    }
+  );
 
 </script>
 
