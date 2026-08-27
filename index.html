@@ -32,18 +32,19 @@
       background: #111111;
     }
 
-
     /* =====================================================
        HERO IMAGE
     ===================================================== */
 
     .hero {
+      position: relative;
+
       height: 235px;
 
       background-image:
         linear-gradient(
           to bottom,
-          rgba(0,0,0,0.04),
+          rgba(0,0,0,0.03),
           rgba(0,0,0,0.18)
         ),
         url("./ONIKU-food.JPG");
@@ -51,17 +52,25 @@
       background-size: cover;
       background-position: center 48%;
       background-repeat: no-repeat;
-
-      padding: 24px 44px;
     }
 
     .hero-inner {
+      position: relative;
+
       width: 100%;
+      height: 100%;
+
       max-width: 1180px;
+
       margin: 0 auto;
     }
 
     .logo {
+      position: absolute;
+
+      left: 44px;
+      bottom: 22px;
+
       display: block;
 
       width: 230px;
@@ -500,10 +509,14 @@
 
       .hero {
         height: 220px;
+      }
 
-        padding:
-          22px
-          28px;
+      .logo {
+        left: 28px;
+        bottom: 20px;
+
+        width: 200px;
+        max-width: 36%;
       }
 
       .hero-copy {
@@ -546,10 +559,6 @@
       .hero {
         height: 190px;
 
-        padding:
-          17px
-          18px;
-
         background-size: cover;
 
         background-position:
@@ -557,8 +566,11 @@
       }
 
       .logo {
+        left: 18px;
+        bottom: 16px;
+
         width: 145px;
-        max-width: 47%;
+        max-width: 48%;
       }
 
       .hero-copy {
@@ -658,6 +670,13 @@
 
       .hero {
         height: 175px;
+      }
+
+      .logo {
+        left: 15px;
+        bottom: 14px;
+
+        width: 135px;
       }
 
       .hero-copy h1 {
@@ -1141,27 +1160,16 @@
     short: [
 
       "Really enjoyed our meal at ONIKU.",
-
       "Had a great dinner at ONIKU.",
-
       "Really good AYCE BBQ experience.",
-
       "We had such a good time here.",
-
       "ONIKU was a really nice surprise.",
-
       "Definitely enjoyed our visit to ONIKU.",
-
       "Had a really solid experience here.",
-
       "Really liked this place.",
-
       "Great spot for AYCE BBQ.",
-
       "We came here for dinner and really enjoyed it.",
-
       "Very happy with our experience at ONIKU.",
-
       "This was a great find for BBQ."
 
     ],
@@ -1170,27 +1178,16 @@
     casual: [
 
       "Came here for dinner and ended up having a really good experience.",
-
       "We tried ONIKU for the first time and were really impressed.",
-
       "Had dinner here with friends and everyone had a great time.",
-
       "We were looking for an AYCE BBQ place and decided to give ONIKU a try.",
-
       "Really enjoyed our dinner here from start to finish.",
-
       "This ended up being one of the better AYCE BBQ experiences we've had recently.",
-
       "Stopped by ONIKU for dinner and really liked the overall experience.",
-
       "We came with a group and this was a great place to share a meal.",
-
       "First time trying ONIKU and we were pleasantly surprised.",
-
       "Had a really enjoyable meal here and would definitely come back.",
-
       "ONIKU turned out to be a great choice for dinner.",
-
       "We had heard about ONIKU and finally got a chance to try it."
 
     ],
@@ -1199,27 +1196,16 @@
     detailed: [
 
       "We recently visited ONIKU for dinner and had a really enjoyable experience from beginning to end.",
-
       "ONIKU stood out to us as a really solid option for premium all-you-can-eat BBQ.",
-
       "We came to ONIKU with a group for dinner and were impressed with both the food and the overall experience.",
-
       "After trying several AYCE BBQ restaurants, ONIKU ended up being one of the more memorable ones.",
-
       "We visited ONIKU for a casual dinner and were pleasantly surprised by the overall quality.",
-
       "ONIKU offers a really nice balance between the variety of an AYCE restaurant and a more premium dining experience.",
-
       "We decided to try ONIKU for dinner and ended up enjoying the entire experience.",
-
       "Our visit to ONIKU was a really positive one.",
-
       "We had a great experience at ONIKU and appreciated the attention to both food quality and service.",
-
       "ONIKU was a great choice for our group dinner and everyone found something they liked.",
-
       "We recently tried ONIKU and thought the overall experience was very well put together.",
-
       "From the food selection to the service, our dinner at ONIKU was a really enjoyable experience."
 
     ]
@@ -1236,19 +1222,12 @@
     meatQuality: [
 
       "The meat quality was noticeably better than what we usually expect from an AYCE restaurant.",
-
       "The meats tasted fresh and the quality was very solid.",
-
       "We were especially impressed with the quality of the meat.",
-
       "For an all-you-can-eat place, the meat quality was surprisingly good.",
-
       "Everything we ordered came out fresh and well prepared.",
-
       "The quality of the different cuts really stood out.",
-
       "The meat was tender, flavorful, and consistently good throughout the meal.",
-
       "The meat selection felt a little more premium than most all-you-can-eat restaurants."
 
     ],
@@ -1257,19 +1236,12 @@
     service: [
 
       "The staff was friendly and attentive throughout the meal.",
-
       "Service was quick and everyone we interacted with was very nice.",
-
       "The team checked on us regularly without making us feel rushed.",
-
       "Our server was helpful and made the whole experience easy.",
-
       "The staff was welcoming and kept everything moving smoothly.",
-
       "Service was attentive even when the restaurant was busy.",
-
       "Everyone working there was polite and helpful.",
-
       "The staff was responsive whenever we needed to order another round."
 
     ],
@@ -1278,19 +1250,12 @@
     variety: [
 
       "There was a great variety of options to choose from.",
-
       "The menu had plenty of choices without feeling overwhelming.",
-
       "We liked having so many different meats and sides to try.",
-
       "There was enough variety that everyone in our group found something they liked.",
-
       "The selection made it easy to try a little bit of everything.",
-
       "We never felt limited by the selection.",
-
       "The variety made the AYCE experience much more enjoyable.",
-
       "There were plenty of different options to keep the meal interesting."
 
     ],
@@ -1299,19 +1264,12 @@
     atmosphere: [
 
       "The restaurant has a clean, comfortable and modern atmosphere.",
-
       "The dining space felt nice and relaxed.",
-
       "The atmosphere made it a great place for a group dinner.",
-
       "The restaurant was clean and had a nice overall vibe.",
-
       "We liked the modern and comfortable feel of the space.",
-
       "The overall atmosphere was lively without being too overwhelming.",
-
       "The dining room felt well kept and inviting.",
-
       "We really liked the overall vibe of the restaurant."
 
     ],
@@ -1320,19 +1278,12 @@
     value: [
 
       "The overall quality and selection made the price feel worth it.",
-
       "We thought the value was very good for the amount and quality of food.",
-
       "For AYCE BBQ, the balance between price and quality was solid.",
-
       "It felt like good value considering the variety available.",
-
       "The overall experience felt worth the price.",
-
       "For the quality of the meats and selection, we felt the pricing was reasonable.",
-
       "The combination of quality and quantity made the meal feel worth it.",
-
       "It felt like a good balance between a premium experience and AYCE pricing."
 
     ],
@@ -1341,19 +1292,12 @@
     freshness: [
 
       "Everything tasted fresh and came out in good condition.",
-
       "The ingredients tasted fresh throughout the meal.",
-
       "We appreciated how fresh everything seemed.",
-
       "The food came out fresh each time we ordered.",
-
       "Freshness was consistent across the different items we tried.",
-
       "Everything felt freshly prepared rather than sitting out.",
-
       "Each round came out looking clean and fresh.",
-
       "We were happy with how fresh everything tasted."
 
     ]
@@ -1370,19 +1314,12 @@
     premiumCuts: [
 
       "The premium cuts were definitely some of our favorites.",
-
       "We especially enjoyed trying the premium meat selections.",
-
       "The premium cuts were tender and flavorful.",
-
       "A few of the premium cuts really stood out.",
-
       "We would definitely order the premium selections again.",
-
       "The premium cuts made the meal feel a little more special.",
-
       "The premium options were a highlight of the menu.",
-
       "The premium meat selection was one of the best parts of the meal."
 
     ],
@@ -1391,15 +1328,10 @@
     beef: [
 
       "The beef selections were some of the highlights of the meal.",
-
       "We tried several beef options and really enjoyed them.",
-
       "The beef was flavorful and cooked nicely on the grill.",
-
       "A lot of our favorite items ended up being the beef cuts.",
-
       "The beef selection was very solid.",
-
       "Some of the beef options ended up being our favorite items of the night."
 
     ],
@@ -1408,15 +1340,10 @@
     pork: [
 
       "We also really enjoyed the pork selections.",
-
       "The pork grilled up nicely and had a lot of flavor.",
-
       "Several of the pork options were surprisingly good.",
-
       "The pork was tender and enjoyable.",
-
       "We would definitely order the pork again.",
-
       "The pork selections added some really good variety to the meal."
 
     ],
@@ -1425,15 +1352,10 @@
     seafood: [
 
       "It was also nice having seafood options alongside the meats.",
-
       "We enjoyed having some seafood to mix things up.",
-
       "The seafood was a nice addition to the AYCE selection.",
-
       "We liked being able to alternate between meat and seafood.",
-
       "The seafood options added even more variety to the meal.",
-
       "The seafood selection was a nice bonus."
 
     ],
@@ -1442,15 +1364,10 @@
     sideDishes: [
 
       "The side dishes were also a nice part of the meal.",
-
       "We enjoyed the sides in between rounds of BBQ.",
-
       "There were some really good side dishes to go with the meats.",
-
       "The sides complemented the BBQ well.",
-
       "The side dishes made the meal feel more complete.",
-
       "The sides worked really well with the BBQ."
 
     ],
@@ -1459,15 +1376,10 @@
     selection: [
 
       "Overall, the selection was very well rounded.",
-
       "There was plenty to choose from throughout the meal.",
-
       "We liked being able to try so many different items.",
-
       "The overall selection made the AYCE experience more fun.",
-
       "There were enough options that we never felt limited.",
-
       "The variety of choices helped make the entire dinner more enjoyable."
 
     ]
@@ -1484,27 +1396,16 @@
     short: [
 
       "Would definitely come back.",
-
       "Definitely worth trying.",
-
       "We'll be back.",
-
       "Would happily come here again.",
-
       "Great place for a group dinner.",
-
       "Definitely recommend giving it a try.",
-
       "Looking forward to coming back.",
-
       "Overall, a really good experience.",
-
       "Would recommend this place.",
-
       "Glad we tried it.",
-
       "We'll definitely return.",
-
       "A solid spot for AYCE BBQ."
 
     ],
@@ -1513,23 +1414,14 @@
     casual: [
 
       "Overall, we had a really good time and would definitely come back.",
-
       "Definitely a place we'd return to when we're craving BBQ.",
-
       "Would happily recommend ONIKU for a dinner with friends or family.",
-
       "We left full and happy, which is exactly what we wanted from an AYCE BBQ dinner.",
-
       "Already looking forward to coming back and trying more of the menu.",
-
       "Overall, a really solid AYCE experience and one we'd recommend.",
-
       "This is definitely going into our rotation for group dinners.",
-
       "Would absolutely come back again with friends.",
-
       "Glad we gave this place a try and we'll definitely be back.",
-
       "Overall, ONIKU delivered a really enjoyable dinner."
 
     ],
@@ -1538,19 +1430,12 @@
     detailed: [
 
       "Overall, ONIKU did a great job balancing food quality, variety, service and value, and we would definitely return.",
-
       "For anyone looking for a premium-style AYCE BBQ experience, ONIKU is definitely worth considering.",
-
       "The combination of good food, attentive service and a comfortable atmosphere made this a really enjoyable dinner.",
-
       "We appreciated that the experience felt a little more polished than the typical AYCE restaurant and would gladly come back.",
-
       "Overall, we were very satisfied with our visit and would recommend ONIKU for both casual dinners and group outings.",
-
       "Between the quality of the meats, the variety and the service, ONIKU ended up being a really solid choice.",
-
       "We left feeling like the experience offered a good balance of quality and value, and we'd definitely visit again.",
-
       "We had a really positive experience and would definitely recommend ONIKU to friends."
 
     ]
