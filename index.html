@@ -36,6 +36,7 @@ body {
 .hero {
   width: 100%;
   height: 235px;
+
   position: relative;
 
   background:
@@ -53,21 +54,14 @@ body {
   overflow: hidden;
 }
 
-.hero-inner {
-  width: 100%;
-  height: 100%;
-  max-width: 1180px;
-  margin: 0 auto;
-  position: relative;
-}
-
 
 /* =========================================================
    LOGO
-   ALL DEVICES = BOTTOM RIGHT
+   NEW CLASS — NO OLD .logo CLASS
+   ALWAYS AT IMAGE BOTTOM RIGHT
 ========================================================= */
 
-.hero .hero-inner .logo {
+.hero-logo-right {
   position: absolute !important;
 
   right: 0 !important;
@@ -79,7 +73,7 @@ body {
   width: 230px;
   max-width: 38%;
 
-  height: auto;
+  height: auto !important;
 
   display: block;
 
@@ -87,6 +81,8 @@ body {
   padding: 0 !important;
 
   transform: none !important;
+
+  z-index: 10;
 }
 
 
@@ -111,7 +107,9 @@ body {
 .hero-copy h1 {
   margin: 0;
 
-  font-size: clamp(38px, 5vw, 56px);
+  font-size:
+    clamp(38px, 5vw, 56px);
+
   line-height: 1.04;
 
   letter-spacing: -1.5px;
@@ -129,7 +127,8 @@ body {
 .intro {
   margin-bottom: 36px;
 
-  color: rgba(255,255,255,.68);
+  color:
+    rgba(255,255,255,.68);
 
   line-height: 1.6;
 }
@@ -160,9 +159,11 @@ body {
 .desc {
   margin-bottom: 18px;
 
-  color: rgba(255,255,255,.48);
+  color:
+    rgba(255,255,255,.48);
 
   font-size: 14px;
+
   line-height: 1.5;
 }
 
@@ -232,6 +233,7 @@ body {
 
 textarea {
   width: 100%;
+
   min-height: 100px;
 
   padding: 15px;
@@ -256,6 +258,7 @@ textarea {
     sans-serif;
 
   font-size: 16px;
+
   line-height: 1.55;
 }
 
@@ -279,9 +282,11 @@ textarea:focus {
 
 .primary {
   width: 100%;
+
   min-height: 54px;
 
   border: 0;
+
   border-radius: 7px;
 
   background: #d7ad60;
@@ -294,6 +299,7 @@ textarea:focus {
     sans-serif;
 
   font-size: 16px;
+
   font-weight: 700;
 
   cursor: pointer;
@@ -308,6 +314,7 @@ textarea:focus {
   display: none;
 
   margin-top: 22px;
+
   padding: 24px;
 
   border-radius: 12px;
@@ -325,6 +332,7 @@ textarea:focus {
   color: #c69a51;
 
   font-size: 11px;
+
   font-weight: 700;
 
   letter-spacing: 1.3px;
@@ -358,7 +366,7 @@ textarea:focus {
 
 
 /* =========================================================
-   RESULT BUTTONS
+   ACTIONS
 ========================================================= */
 
 .actions {
@@ -384,6 +392,7 @@ textarea:focus {
     sans-serif;
 
   font-size: 14px;
+
   font-weight: 700;
 }
 
@@ -402,6 +411,7 @@ textarea:focus {
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   background: #d32323;
@@ -421,6 +431,7 @@ textarea:focus {
   text-align: center;
 
   font-size: 12px;
+
   font-weight: 600;
 }
 
@@ -451,7 +462,7 @@ textarea:focus {
     height: 220px;
   }
 
-  .hero .hero-inner .logo {
+  .hero-logo-right {
     position: absolute !important;
 
     right: 0 !important;
@@ -460,20 +471,19 @@ textarea:focus {
     left: auto !important;
     top: auto !important;
 
-    width: 200px !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
+    width: 190px !important;
 
     transform: none !important;
   }
 
   .hero-copy {
-    padding: 26px 28px 24px;
+    padding:
+      26px 28px 24px;
   }
 
   .container {
-    padding: 28px 28px 64px;
+    padding:
+      28px 28px 64px;
   }
 
   .options {
@@ -496,7 +506,7 @@ textarea:focus {
 
 /* =========================================================
    MOBILE
-   LOGO ALSO BOTTOM RIGHT
+   STILL BOTTOM RIGHT
 ========================================================= */
 
 @media (max-width: 560px) {
@@ -508,7 +518,7 @@ textarea:focus {
       center 46%;
   }
 
-  .hero .hero-inner .logo {
+  .hero-logo-right {
     position: absolute !important;
 
     right: 0 !important;
@@ -526,10 +536,13 @@ textarea:focus {
     padding: 0 !important;
 
     transform: none !important;
+
+    z-index: 10;
   }
 
   .hero-copy {
-    padding: 22px 18px 20px;
+    padding:
+      22px 18px 20px;
   }
 
   .hero-copy h1 {
@@ -537,7 +550,8 @@ textarea:focus {
   }
 
   .container {
-    padding: 26px 17px 58px;
+    padding:
+      26px 17px 58px;
   }
 
   .intro {
@@ -570,7 +584,7 @@ textarea:focus {
     height: 175px;
   }
 
-  .hero .hero-inner .logo {
+  .hero-logo-right {
     position: absolute !important;
 
     right: 0 !important;
@@ -580,6 +594,8 @@ textarea:focus {
     top: auto !important;
 
     width: 135px !important;
+
+    height: auto !important;
 
     margin: 0 !important;
     padding: 0 !important;
@@ -610,15 +626,11 @@ textarea:focus {
 
 <section class="hero">
 
-  <div class="hero-inner">
-
-    <img
-      class="logo"
-      src="./ONIKU-logo.png"
-      alt="ONIKU"
-    >
-
-  </div>
+  <img
+    class="hero-logo-right"
+    src="./ONIKU-logo.png"
+    alt="ONIKU"
+  >
 
 </section>
 
@@ -675,12 +687,14 @@ textarea:focus {
 
 <div class="options">
 
+
 <button
   class="option"
   data-value="meat"
 >
 🥩 High-Quality Meat
 </button>
+
 
 <button
   class="option"
@@ -689,12 +703,14 @@ textarea:focus {
 🙌 Friendly Service
 </button>
 
+
 <button
   class="option"
   data-value="variety"
 >
 🍽️ Great Variety
 </button>
+
 
 <button
   class="option"
@@ -703,6 +719,7 @@ textarea:focus {
 ✨ Nice Atmosphere
 </button>
 
+
 <button
   class="option"
   data-value="value"
@@ -710,12 +727,14 @@ textarea:focus {
 💯 Good Value
 </button>
 
+
 <button
   class="option"
   data-value="fresh"
 >
 🌿 Fresh Ingredients
 </button>
+
 
 </div>
 
@@ -744,12 +763,14 @@ textarea:focus {
 
 <div class="options">
 
+
 <button
   class="option"
   data-value="premium"
 >
 ⭐ Premium Cuts
 </button>
+
 
 <button
   class="option"
@@ -758,12 +779,14 @@ textarea:focus {
 🐂 Beef
 </button>
 
+
 <button
   class="option"
   data-value="pork"
 >
 🐖 Pork
 </button>
+
 
 <button
   class="option"
@@ -772,6 +795,7 @@ textarea:focus {
 🦐 Seafood
 </button>
 
+
 <button
   class="option"
   data-value="sides"
@@ -779,12 +803,14 @@ textarea:focus {
 🍲 Side Dishes
 </button>
 
+
 <button
   class="option"
   data-value="selection"
 >
 📋 Overall Selection
 </button>
+
 
 </div>
 
@@ -825,6 +851,7 @@ textarea:focus {
 0 / 220
 </div>
 
+
 </section>
 
 
@@ -851,17 +878,21 @@ Generate My Review
   id="result"
 >
 
+
 <div class="label">
   Your Review
 </div>
+
 
 <h3>
   Ready to share
 </h3>
 
+
 <textarea
   id="output"
 ></textarea>
+
 
 <div class="help">
   Feel free to edit the review above so it sounds exactly like you.
@@ -870,6 +901,7 @@ Generate My Review
 
 <div class="actions">
 
+
 <button
   class="secondary"
   id="copy"
@@ -877,12 +909,14 @@ Generate My Review
 Copy Review
 </button>
 
+
 <button
   class="secondary"
   id="another"
 >
 Try Another
 </button>
+
 
 <a
   class="yelp"
@@ -893,6 +927,7 @@ Try Another
 Continue to Yelp
 </a>
 
+
 </div>
 
 
@@ -900,6 +935,7 @@ Continue to Yelp
   class="copymsg"
   id="copymsg"
 ></div>
+
 
 </div>
 
@@ -921,11 +957,13 @@ Continue to Yelp
 ========================================================= */
 
 function randomItem(array) {
+
   return array[
     Math.floor(
       Math.random() * array.length
     )
   ];
+
 }
 
 
@@ -955,6 +993,7 @@ function shuffle(array) {
   }
 
   return copy;
+
 }
 
 
@@ -1004,7 +1043,7 @@ extra.addEventListener(
 
 
 /* =========================================================
-   OPENINGS - 12
+   OPENINGS — 12
 ========================================================= */
 
 const openings = [
@@ -1037,7 +1076,7 @@ const openings = [
 
 
 /* =========================================================
-   ENDINGS - 12
+   ENDINGS — 12
 ========================================================= */
 
 const endings = [
@@ -1099,8 +1138,8 @@ const connectors = [
 
 
 /* =========================================================
-   PHRASES
-   12 PHRASES FOR EACH OPTION
+   PHRASE BANK
+   12 PHRASES PER OPTION
 ========================================================= */
 
 const phrases = {
@@ -1513,26 +1552,31 @@ function pickLength() {
   const roll =
     Math.random() * 100;
 
+
   /*
-    SHORT  = 30%
-    MEDIUM = 50%
-    LONG   = 20%
+    30% SHORT
+    50% MEDIUM
+    20% LONG
   */
+
 
   if (roll < 30) {
     return "short";
   }
 
+
   if (roll < 80) {
     return "medium";
   }
 
+
   return "long";
+
 }
 
 
 /* =========================================================
-   NUMBER OF HIGHLIGHTS
+   HIGHLIGHT COUNT
 ========================================================= */
 
 function getHighlightCount(
@@ -1540,8 +1584,11 @@ function getHighlightCount(
   totalSelected
 ) {
 
+
   if (totalSelected <= 1) {
+
     return totalSelected;
+
   }
 
 
@@ -1551,7 +1598,9 @@ function getHighlightCount(
 
     return Math.min(
       totalSelected,
-      Math.random() < .55 ? 1 : 2
+      Math.random() < .55
+        ? 1
+        : 2
     );
 
   }
@@ -1567,6 +1616,7 @@ function getHighlightCount(
       3,
       4
     ];
+
 
     return Math.min(
       totalSelected,
@@ -1586,6 +1636,7 @@ function getHighlightCount(
     6
   ];
 
+
   return Math.min(
     totalSelected,
     randomItem(possible)
@@ -1603,11 +1654,6 @@ function addConnector(
   index
 ) {
 
-  /*
-    Keep many sentences independent
-    so the review does not feel
-    mechanically connected.
-  */
 
   if (
     index === 0 ||
@@ -1643,12 +1689,15 @@ function addConnector(
 
 function cleanPersonalDetail(text) {
 
+
   let cleaned =
     text.trim();
 
 
   if (!cleaned) {
+
     return "";
+
   }
 
 
@@ -1667,6 +1716,7 @@ function cleanPersonalDetail(text) {
 
 
   return cleaned;
+
 }
 
 
@@ -1716,17 +1766,13 @@ function generateReview() {
   }
 
 
-  /* PICK LENGTH */
+  /* REVIEW LENGTH */
 
   let reviewLength =
     pickLength();
 
 
-  /*
-    One selection:
-    don't create an artificially
-    long review.
-  */
+  /* ONE OPTION = SHORT */
 
   if (
     selected.length <= 1 &&
@@ -1739,10 +1785,7 @@ function generateReview() {
   }
 
 
-  /*
-    Two selections:
-    cap at medium.
-  */
+  /* TWO OPTIONS = MAX MEDIUM */
 
   if (
     selected.length === 2 &&
@@ -1755,13 +1798,13 @@ function generateReview() {
   }
 
 
-  /* RANDOMIZE SELECTION ORDER */
+  /* RANDOM ORDER */
 
   const shuffled =
     shuffle(selected);
 
 
-  /* NUMBER OF HIGHLIGHTS */
+  /* HOW MANY TO USE */
 
   const highlightCount =
     getHighlightCount(
@@ -1770,7 +1813,7 @@ function generateReview() {
     );
 
 
-  /* CHOOSE HIGHLIGHTS */
+  /* PICK HIGHLIGHTS */
 
   const chosen =
     shuffled.slice(
@@ -1779,16 +1822,18 @@ function generateReview() {
     );
 
 
-  /* BUILD DETAIL SENTENCES */
+  /* DETAIL SENTENCES */
 
   const detailSentences =
     chosen.map(
       function(key, index) {
 
+
         const sentence =
           randomItem(
             phrases[key]
           );
+
 
         return addConnector(
           sentence,
@@ -1805,8 +1850,8 @@ function generateReview() {
 
 
   /*
-    SHORT reviews sometimes
-    skip the opening.
+    Short reviews sometimes
+    don't need an opening.
   */
 
   if (
@@ -1821,7 +1866,7 @@ function generateReview() {
   }
 
 
-  /* ADD HIGHLIGHTS */
+  /* DETAILS */
 
   detailSentences
   .forEach(function(sentence) {
@@ -1831,7 +1876,7 @@ function generateReview() {
   });
 
 
-  /* ADD USER'S OWN DETAIL */
+  /* USER DETAIL */
 
   if (personal !== "") {
 
@@ -1843,8 +1888,8 @@ function generateReview() {
 
 
   /*
-    SHORT reviews sometimes
-    skip the ending.
+    Short reviews sometimes
+    don't need a formal ending.
   */
 
   if (
@@ -1859,10 +1904,7 @@ function generateReview() {
   }
 
 
-  /*
-    NEVER RETURN ONLY
-    ONE SENTENCE
-  */
+  /* NEVER RETURN ONLY ONE SENTENCE */
 
   if (parts.length === 1) {
 
@@ -1898,7 +1940,7 @@ function generateReview() {
   );
 
 
-  /* CLEAR OLD MESSAGE */
+  /* CLEAR OLD COPY MESSAGE */
 
   document
   .getElementById("copymsg")
@@ -1920,7 +1962,7 @@ function generateReview() {
 
 
 /* =========================================================
-   GENERATE BUTTON
+   GENERATE
 ========================================================= */
 
 document
@@ -1965,7 +2007,9 @@ document
 
 
     if (!text) {
+
       return;
+
     }
 
 
@@ -1977,16 +2021,20 @@ document
 
     }
 
+
     catch (error) {
+
 
       output.focus();
 
       output.select();
 
+
       output.setSelectionRange(
         0,
         output.value.length
       );
+
 
       document.execCommand(
         "copy"
@@ -2016,6 +2064,7 @@ document
           "Copy Review";
 
       },
+
       1500
     );
 
@@ -2023,6 +2072,7 @@ document
 );
 
 </script>
+
 
 </body>
 </html>
