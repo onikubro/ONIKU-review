@@ -54,13 +54,18 @@ body {
 }
 
 
-/* LOGO - TOP LEFT */
+/* =========================
+   LOGO - BOTTOM RIGHT
+========================= */
 
 .logo {
   position: absolute;
 
-  left: 44px;
-  top: 22px;
+  right: 0;
+  bottom: 0;
+
+  left: auto;
+  top: auto;
 
   width: 230px;
   max-width: 34%;
@@ -426,9 +431,11 @@ textarea:focus {
   }
 
   .logo {
-    left: 28px;
+    right: 0;
+    bottom: 0;
 
-    top: 20px;
+    left: auto;
+    top: auto;
 
     width: 200px;
   }
@@ -474,9 +481,11 @@ textarea:focus {
   }
 
   .logo {
-    left: 18px;
+    right: 0;
+    bottom: 0;
 
-    top: 16px;
+    left: auto;
+    top: auto;
 
     width: 145px;
 
@@ -522,9 +531,11 @@ textarea:focus {
   }
 
   .logo {
-    left: 15px;
+    right: 0;
+    bottom: 0;
 
-    top: 14px;
+    left: auto;
+    top: auto;
 
     width: 135px;
   }
@@ -998,7 +1009,7 @@ extra.addEventListener(
 
 
 /* =========================================================
-   12 OPENINGS
+   OPENINGS - 12
 ========================================================= */
 
 const openings = [
@@ -1031,7 +1042,7 @@ const openings = [
 
 
 /* =========================================================
-   12 ENDINGS
+   ENDINGS - 12
 ========================================================= */
 
 const endings = [
@@ -1094,15 +1105,13 @@ const connectors = [
 
 /* =========================================================
    PHRASE BANK
-   12 PHRASES FOR EVERY OPTION
+   12 PHRASES FOR EACH OPTION
 ========================================================= */
 
 const phrases = {
 
 
-/* ---------------------------------------------------------
-   HIGH-QUALITY MEAT
---------------------------------------------------------- */
+/* HIGH-QUALITY MEAT */
 
 meat: [
 
@@ -1133,9 +1142,7 @@ meat: [
 ],
 
 
-/* ---------------------------------------------------------
-   FRIENDLY SERVICE
---------------------------------------------------------- */
+/* FRIENDLY SERVICE */
 
 service: [
 
@@ -1166,9 +1173,7 @@ service: [
 ],
 
 
-/* ---------------------------------------------------------
-   GREAT VARIETY
---------------------------------------------------------- */
+/* GREAT VARIETY */
 
 variety: [
 
@@ -1199,9 +1204,7 @@ variety: [
 ],
 
 
-/* ---------------------------------------------------------
-   NICE ATMOSPHERE
---------------------------------------------------------- */
+/* NICE ATMOSPHERE */
 
 atmosphere: [
 
@@ -1232,9 +1235,7 @@ atmosphere: [
 ],
 
 
-/* ---------------------------------------------------------
-   GOOD VALUE
---------------------------------------------------------- */
+/* GOOD VALUE */
 
 value: [
 
@@ -1265,9 +1266,7 @@ value: [
 ],
 
 
-/* ---------------------------------------------------------
-   FRESH INGREDIENTS
---------------------------------------------------------- */
+/* FRESH INGREDIENTS */
 
 fresh: [
 
@@ -1298,9 +1297,7 @@ fresh: [
 ],
 
 
-/* ---------------------------------------------------------
-   PREMIUM CUTS
---------------------------------------------------------- */
+/* PREMIUM CUTS */
 
 premium: [
 
@@ -1331,9 +1328,7 @@ premium: [
 ],
 
 
-/* ---------------------------------------------------------
-   BEEF
---------------------------------------------------------- */
+/* BEEF */
 
 beef: [
 
@@ -1364,9 +1359,7 @@ beef: [
 ],
 
 
-/* ---------------------------------------------------------
-   PORK
---------------------------------------------------------- */
+/* PORK */
 
 pork: [
 
@@ -1397,9 +1390,7 @@ pork: [
 ],
 
 
-/* ---------------------------------------------------------
-   SEAFOOD
---------------------------------------------------------- */
+/* SEAFOOD */
 
 seafood: [
 
@@ -1430,9 +1421,7 @@ seafood: [
 ],
 
 
-/* ---------------------------------------------------------
-   SIDE DISHES
---------------------------------------------------------- */
+/* SIDE DISHES */
 
 sides: [
 
@@ -1463,9 +1452,7 @@ sides: [
 ],
 
 
-/* ---------------------------------------------------------
-   OVERALL SELECTION
---------------------------------------------------------- */
+/* OVERALL SELECTION */
 
 selection: [
 
@@ -1499,40 +1486,11 @@ selection: [
 
 
 /* =========================================================
-   REVIEW LENGTH STRUCTURES
-
-   SHORT:
-   1-2 selected highlights
-
-   MEDIUM:
-   2-4 selected highlights
-
-   LONG:
-   4-6 selected highlights
-========================================================= */
-
-const lengthStructures = [
-
-  {
-    type: "short",
-    weight: 30
-  },
-
-  {
-    type: "medium",
-    weight: 50
-  },
-
-  {
-    type: "long",
-    weight: 20
-  }
-
-];
-
-
-/* =========================================================
    PICK REVIEW LENGTH
+
+   30% SHORT
+   50% MEDIUM
+   20% LONG
 ========================================================= */
 
 function pickLength() {
@@ -1554,7 +1512,7 @@ function pickLength() {
 
 
 /* =========================================================
-   NUMBER OF HIGHLIGHTS TO USE
+   NUMBER OF HIGHLIGHTS
 ========================================================= */
 
 function getHighlightCount(
@@ -1567,6 +1525,8 @@ function getHighlightCount(
   }
 
 
+  /* SHORT */
+
   if (length === "short") {
 
     return Math.min(
@@ -1577,9 +1537,16 @@ function getHighlightCount(
   }
 
 
+  /* MEDIUM */
+
   if (length === "medium") {
 
-    const possible = [2, 3, 3, 4];
+    const possible = [
+      2,
+      3,
+      3,
+      4
+    ];
 
     return Math.min(
       totalSelected,
@@ -1589,7 +1556,15 @@ function getHighlightCount(
   }
 
 
-  const possible = [4, 4, 5, 5, 6];
+  /* LONG */
+
+  const possible = [
+    4,
+    4,
+    5,
+    5,
+    6
+  ];
 
   return Math.min(
     totalSelected,
@@ -1607,11 +1582,6 @@ function addConnector(
   sentence,
   index
 ) {
-
-  /*
-    Keep the first detail natural.
-    Occasionally add a connector to later details.
-  */
 
   if (
     index === 0 ||
@@ -1631,11 +1601,6 @@ function addConnector(
     sentence.charAt(0).toLowerCase() +
     sentence.slice(1);
 
-
-  /*
-    Connectors ending with "that"
-    work naturally with lower-case sentence.
-  */
 
   return (
     connector +
@@ -1710,7 +1675,7 @@ function generateReview() {
     );
 
 
-  /* REQUIRE REAL INPUT */
+  /* REQUIRE INPUT */
 
   if (
     selected.length === 0 &&
@@ -1733,9 +1698,8 @@ function generateReview() {
 
 
   /*
-    If only one selection exists,
-    avoid trying to create an artificially
-    long review.
+    One selected item:
+    keep the review short.
   */
 
   if (
@@ -1749,8 +1713,8 @@ function generateReview() {
 
 
   /*
-    If there are only two selected items,
-    long reviews would feel repetitive.
+    Two selected items:
+    avoid artificially long reviews.
   */
 
   if (
@@ -1763,13 +1727,13 @@ function generateReview() {
   }
 
 
-  /* SHUFFLE SELECTED ITEMS */
+  /* RANDOMIZE SELECTED ITEMS */
 
   const shuffled =
     shuffle(selected);
 
 
-  /* HOW MANY HIGHLIGHTS */
+  /* DETERMINE NUMBER OF HIGHLIGHTS */
 
   const highlightCount =
     getHighlightCount(
@@ -1778,6 +1742,8 @@ function generateReview() {
     );
 
 
+  /* PICK HIGHLIGHTS */
+
   const chosen =
     shuffled.slice(
       0,
@@ -1785,7 +1751,7 @@ function generateReview() {
     );
 
 
-  /* BUILD BODY */
+  /* BUILD DETAIL SENTENCES */
 
   const detailSentences =
     chosen.map(
@@ -1805,15 +1771,14 @@ function generateReview() {
     );
 
 
-  /* REVIEW PARTS */
+  /* BUILD REVIEW */
 
   let parts = [];
 
 
   /*
-    SHORT reviews sometimes skip
-    the formal opening to create
-    more variation.
+    Short reviews occasionally
+    skip the standard opening.
   */
 
   if (
@@ -1842,18 +1807,17 @@ function generateReview() {
 
   if (personal !== "") {
 
-    /*
-      Personal comments should almost
-      always be included because they
-      make the review more authentic.
-    */
-
-    parts.push(personal);
+    parts.push(
+      personal
+    );
 
   }
 
 
-  /* ADD ENDING */
+  /*
+    Short reviews sometimes
+    finish without a formal ending.
+  */
 
   if (
     reviewLength !== "short" ||
@@ -1868,8 +1832,8 @@ function generateReview() {
 
 
   /*
-    If a review somehow contains
-    only one sentence, add an ending.
+    Make sure review is not
+    only one sentence.
   */
 
   if (parts.length === 1) {
@@ -1906,7 +1870,7 @@ function generateReview() {
   );
 
 
-  /* CLEAR COPY MESSAGE */
+  /* CLEAR OLD COPY MESSAGE */
 
   document
   .getElementById("copymsg")
@@ -2008,7 +1972,8 @@ document
       "Review copied! You can now continue to Yelp.";
 
 
-    const button = this;
+    const button =
+      this;
 
 
     button.textContent =
