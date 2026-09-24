@@ -3,11 +3,15 @@
 
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>ONIKU | Share Your Experience</title>
 
 <style>
+
+/* =========================================================
+   BASE
+========================================================= */
 
 * {
   box-sizing: border-box;
@@ -25,11 +29,12 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero {
+  width: 100%;
   height: 235px;
   position: relative;
 
@@ -44,44 +49,56 @@ body {
   background-size: cover;
   background-position: center 48%;
   background-repeat: no-repeat;
+
+  overflow: hidden;
 }
 
 .hero-inner {
+  width: 100%;
   height: 100%;
   max-width: 1180px;
-  margin: auto;
+  margin: 0 auto;
   position: relative;
 }
 
 
-/* =========================
-   LOGO - BOTTOM RIGHT
-========================= */
+/* =========================================================
+   LOGO
+   ALL DEVICES = BOTTOM RIGHT
+========================================================= */
 
-.logo {
-  position: absolute;
+.hero .hero-inner .logo {
+  position: absolute !important;
 
-  right: 0;
-  bottom: 0;
+  right: 0 !important;
+  bottom: 0 !important;
 
-  left: auto;
-  top: auto;
+  left: auto !important;
+  top: auto !important;
 
   width: 230px;
-  max-width: 34%;
+  max-width: 38%;
 
   height: auto;
+
+  display: block;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  transform: none !important;
 }
 
 
-/* =========================
+/* =========================================================
    TITLE
-========================= */
+========================================================= */
 
 .hero-copy,
 .container {
+  width: 100%;
   max-width: 1180px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .hero-copy {
@@ -101,9 +118,9 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
    MAIN
-========================= */
+========================================================= */
 
 .container {
   padding: 28px 44px 72px;
@@ -146,14 +163,13 @@ body {
   color: rgba(255,255,255,.48);
 
   font-size: 14px;
-
   line-height: 1.5;
 }
 
 
-/* =========================
+/* =========================================================
    OPTIONS
-========================= */
+========================================================= */
 
 .options {
   display: grid;
@@ -182,6 +198,11 @@ body {
 
   text-align: left;
 
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
   font-size: 15px;
 
   cursor: pointer;
@@ -205,13 +226,12 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
    TEXTAREA
-========================= */
+========================================================= */
 
 textarea {
   width: 100%;
-
   min-height: 100px;
 
   padding: 15px;
@@ -236,7 +256,6 @@ textarea {
     sans-serif;
 
   font-size: 16px;
-
   line-height: 1.55;
 }
 
@@ -254,40 +273,41 @@ textarea:focus {
 }
 
 
-/* =========================
+/* =========================================================
    GENERATE BUTTON
-========================= */
+========================================================= */
 
 .primary {
   width: 100%;
-
   min-height: 54px;
 
   border: 0;
-
   border-radius: 7px;
 
   background: #d7ad60;
 
   color: #111;
 
-  font-size: 16px;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
+  font-size: 16px;
   font-weight: 700;
 
   cursor: pointer;
 }
 
 
-/* =========================
+/* =========================================================
    RESULT
-========================= */
+========================================================= */
 
 .result {
   display: none;
 
   margin-top: 22px;
-
   padding: 24px;
 
   border-radius: 12px;
@@ -305,7 +325,6 @@ textarea:focus {
   color: #c69a51;
 
   font-size: 11px;
-
   font-weight: 700;
 
   letter-spacing: 1.3px;
@@ -338,9 +357,9 @@ textarea:focus {
 }
 
 
-/* =========================
+/* =========================================================
    RESULT BUTTONS
-========================= */
+========================================================= */
 
 .actions {
   display: grid;
@@ -359,8 +378,12 @@ textarea:focus {
 
   border-radius: 7px;
 
-  font-size: 14px;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -379,7 +402,6 @@ textarea:focus {
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   background: #d32323;
@@ -399,14 +421,13 @@ textarea:focus {
   text-align: center;
 
   font-size: 12px;
-
   font-weight: 600;
 }
 
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 .footer {
   margin-top: 26px;
@@ -420,9 +441,9 @@ textarea:focus {
 }
 
 
-/* =========================
+/* =========================================================
    TABLET
-========================= */
+========================================================= */
 
 @media (max-width: 900px) {
 
@@ -430,24 +451,29 @@ textarea:focus {
     height: 220px;
   }
 
-  .logo {
-    right: 0;
-    bottom: 0;
+  .hero .hero-inner .logo {
+    position: absolute !important;
 
-    left: auto;
-    top: auto;
+    right: 0 !important;
+    bottom: 0 !important;
 
-    width: 200px;
+    left: auto !important;
+    top: auto !important;
+
+    width: 200px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform: none !important;
   }
 
   .hero-copy {
-    padding:
-      26px 28px 24px;
+    padding: 26px 28px 24px;
   }
 
   .container {
-    padding:
-      28px 28px 64px;
+    padding: 28px 28px 64px;
   }
 
   .options {
@@ -464,12 +490,14 @@ textarea:focus {
     grid-column:
       1 / -1;
   }
+
 }
 
 
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+   LOGO ALSO BOTTOM RIGHT
+========================================================= */
 
 @media (max-width: 560px) {
 
@@ -480,21 +508,28 @@ textarea:focus {
       center 46%;
   }
 
-  .logo {
-    right: 0;
-    bottom: 0;
+  .hero .hero-inner .logo {
+    position: absolute !important;
 
-    left: auto;
-    top: auto;
+    right: 0 !important;
+    bottom: 0 !important;
 
-    width: 145px;
+    left: auto !important;
+    top: auto !important;
 
-    max-width: 48%;
+    width: 145px !important;
+    max-width: 48% !important;
+
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform: none !important;
   }
 
   .hero-copy {
-    padding:
-      22px 18px 20px;
+    padding: 22px 18px 20px;
   }
 
   .hero-copy h1 {
@@ -502,8 +537,11 @@ textarea:focus {
   }
 
   .container {
-    padding:
-      26px 17px 58px;
+    padding: 26px 17px 58px;
+  }
+
+  .intro {
+    margin-bottom: 32px;
   }
 
   .options {
@@ -517,12 +555,14 @@ textarea:focus {
   .result {
     padding: 19px;
   }
+
 }
 
 
-/* =========================
-   SMALL PHONE
-========================= */
+/* =========================================================
+   SMALL MOBILE
+   STILL BOTTOM RIGHT
+========================================================= */
 
 @media (max-width: 390px) {
 
@@ -530,14 +570,21 @@ textarea:focus {
     height: 175px;
   }
 
-  .logo {
-    right: 0;
-    bottom: 0;
+  .hero .hero-inner .logo {
+    position: absolute !important;
 
-    left: auto;
-    top: auto;
+    right: 0 !important;
+    bottom: 0 !important;
 
-    width: 135px;
+    left: auto !important;
+    top: auto !important;
+
+    width: 135px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform: none !important;
   }
 
   .actions {
@@ -547,6 +594,7 @@ textarea:focus {
   .yelp {
     grid-column: auto;
   }
+
 }
 
 </style>
@@ -556,9 +604,9 @@ textarea:focus {
 <body>
 
 
-<!-- =========================
+<!-- =======================================================
      HERO
-========================= -->
+======================================================= -->
 
 <section class="hero">
 
@@ -576,9 +624,9 @@ textarea:focus {
 
 
 
-<!-- =========================
+<!-- =======================================================
      TITLE
-========================= -->
+======================================================= -->
 
 <section class="hero-copy">
 
@@ -590,9 +638,9 @@ textarea:focus {
 
 
 
-<!-- =========================
+<!-- =======================================================
      MAIN
-========================= -->
+======================================================= -->
 
 <main class="container">
 
@@ -606,9 +654,9 @@ textarea:focus {
 
 
 
-<!-- =========================
+<!-- =======================================================
      STEP 1
-========================= -->
+======================================================= -->
 
 <section class="section">
 
@@ -621,17 +669,11 @@ textarea:focus {
 </h2>
 
 <div class="desc">
-
   Select everything that made your experience memorable.
-
 </div>
 
 
-<div
-  class="options"
-  id="experienceOptions"
->
-
+<div class="options">
 
 <button
   class="option"
@@ -640,14 +682,12 @@ textarea:focus {
 🥩 High-Quality Meat
 </button>
 
-
 <button
   class="option"
   data-value="service"
 >
 🙌 Friendly Service
 </button>
-
 
 <button
   class="option"
@@ -656,14 +696,12 @@ textarea:focus {
 🍽️ Great Variety
 </button>
 
-
 <button
   class="option"
   data-value="atmosphere"
 >
 ✨ Nice Atmosphere
 </button>
-
 
 <button
   class="option"
@@ -672,7 +710,6 @@ textarea:focus {
 💯 Good Value
 </button>
 
-
 <button
   class="option"
   data-value="fresh"
@@ -680,16 +717,15 @@ textarea:focus {
 🌿 Fresh Ingredients
 </button>
 
-
 </div>
 
 </section>
 
 
 
-<!-- =========================
+<!-- =======================================================
      STEP 2
-========================= -->
+======================================================= -->
 
 <section class="section">
 
@@ -702,17 +738,11 @@ textarea:focus {
 </h2>
 
 <div class="desc">
-
   Pick the parts of the menu you enjoyed most.
-
 </div>
 
 
-<div
-  class="options"
-  id="foodOptions"
->
-
+<div class="options">
 
 <button
   class="option"
@@ -721,14 +751,12 @@ textarea:focus {
 ⭐ Premium Cuts
 </button>
 
-
 <button
   class="option"
   data-value="beef"
 >
 🐂 Beef
 </button>
-
 
 <button
   class="option"
@@ -737,14 +765,12 @@ textarea:focus {
 🐖 Pork
 </button>
 
-
 <button
   class="option"
   data-value="seafood"
 >
 🦐 Seafood
 </button>
-
 
 <button
   class="option"
@@ -753,7 +779,6 @@ textarea:focus {
 🍲 Side Dishes
 </button>
 
-
 <button
   class="option"
   data-value="selection"
@@ -761,16 +786,15 @@ textarea:focus {
 📋 Overall Selection
 </button>
 
-
 </div>
 
 </section>
 
 
 
-<!-- =========================
+<!-- =======================================================
      STEP 3
-========================= -->
+======================================================= -->
 
 <section class="section">
 
@@ -783,9 +807,7 @@ textarea:focus {
 </h2>
 
 <div class="desc">
-
   Add a personal detail to make your review feel even more like you.
-
 </div>
 
 
@@ -803,82 +825,64 @@ textarea:focus {
 0 / 220
 </div>
 
-
 </section>
 
 
 
-<!-- =========================
+<!-- =======================================================
      GENERATE
-========================= -->
+======================================================= -->
 
 <button
   class="primary"
   id="generate"
 >
-
 Generate My Review
-
 </button>
 
 
 
-<!-- =========================
+<!-- =======================================================
      RESULT
-========================= -->
+======================================================= -->
 
 <div
   class="result"
   id="result"
 >
 
-
 <div class="label">
   Your Review
 </div>
-
 
 <h3>
   Ready to share
 </h3>
 
-
 <textarea
   id="output"
 ></textarea>
 
-
 <div class="help">
-
-  Feel free to edit the review above
-  so it sounds exactly like you.
-
+  Feel free to edit the review above so it sounds exactly like you.
 </div>
 
 
-
 <div class="actions">
-
 
 <button
   class="secondary"
   id="copy"
 >
-
 Copy Review
-
 </button>
-
 
 <button
   class="secondary"
   id="another"
 >
-
 Try Another
-
 </button>
-
 
 <a
   class="yelp"
@@ -886,11 +890,8 @@ Try Another
   target="_blank"
   rel="noopener"
 >
-
 Continue to Yelp
-
 </a>
-
 
 </div>
 
@@ -900,15 +901,12 @@ Continue to Yelp
   id="copymsg"
 ></div>
 
-
 </div>
 
 
 
 <div class="footer">
-
-Thank you for dining with ONIKU.
-
+  Thank you for dining with ONIKU.
 </div>
 
 
@@ -919,17 +917,15 @@ Thank you for dining with ONIKU.
 <script>
 
 /* =========================================================
-   BASIC HELPERS
+   HELPERS
 ========================================================= */
 
 function randomItem(array) {
-
   return array[
     Math.floor(
       Math.random() * array.length
     )
   ];
-
 }
 
 
@@ -959,7 +955,6 @@ function shuffle(array) {
   }
 
   return copy;
-
 }
 
 
@@ -1104,14 +1099,16 @@ const connectors = [
 
 
 /* =========================================================
-   PHRASE BANK
+   PHRASES
    12 PHRASES FOR EACH OPTION
 ========================================================= */
 
 const phrases = {
 
 
-/* HIGH-QUALITY MEAT */
+/* ---------------------------------------------------------
+   HIGH-QUALITY MEAT
+--------------------------------------------------------- */
 
 meat: [
 
@@ -1142,7 +1139,9 @@ meat: [
 ],
 
 
-/* FRIENDLY SERVICE */
+/* ---------------------------------------------------------
+   FRIENDLY SERVICE
+--------------------------------------------------------- */
 
 service: [
 
@@ -1173,7 +1172,9 @@ service: [
 ],
 
 
-/* GREAT VARIETY */
+/* ---------------------------------------------------------
+   GREAT VARIETY
+--------------------------------------------------------- */
 
 variety: [
 
@@ -1204,7 +1205,9 @@ variety: [
 ],
 
 
-/* NICE ATMOSPHERE */
+/* ---------------------------------------------------------
+   NICE ATMOSPHERE
+--------------------------------------------------------- */
 
 atmosphere: [
 
@@ -1235,7 +1238,9 @@ atmosphere: [
 ],
 
 
-/* GOOD VALUE */
+/* ---------------------------------------------------------
+   GOOD VALUE
+--------------------------------------------------------- */
 
 value: [
 
@@ -1266,7 +1271,9 @@ value: [
 ],
 
 
-/* FRESH INGREDIENTS */
+/* ---------------------------------------------------------
+   FRESH INGREDIENTS
+--------------------------------------------------------- */
 
 fresh: [
 
@@ -1297,7 +1304,9 @@ fresh: [
 ],
 
 
-/* PREMIUM CUTS */
+/* ---------------------------------------------------------
+   PREMIUM CUTS
+--------------------------------------------------------- */
 
 premium: [
 
@@ -1328,7 +1337,9 @@ premium: [
 ],
 
 
-/* BEEF */
+/* ---------------------------------------------------------
+   BEEF
+--------------------------------------------------------- */
 
 beef: [
 
@@ -1359,7 +1370,9 @@ beef: [
 ],
 
 
-/* PORK */
+/* ---------------------------------------------------------
+   PORK
+--------------------------------------------------------- */
 
 pork: [
 
@@ -1390,7 +1403,9 @@ pork: [
 ],
 
 
-/* SEAFOOD */
+/* ---------------------------------------------------------
+   SEAFOOD
+--------------------------------------------------------- */
 
 seafood: [
 
@@ -1421,7 +1436,9 @@ seafood: [
 ],
 
 
-/* SIDE DISHES */
+/* ---------------------------------------------------------
+   SIDE DISHES
+--------------------------------------------------------- */
 
 sides: [
 
@@ -1452,7 +1469,9 @@ sides: [
 ],
 
 
-/* OVERALL SELECTION */
+/* ---------------------------------------------------------
+   OVERALL SELECTION
+--------------------------------------------------------- */
 
 selection: [
 
@@ -1486,17 +1505,19 @@ selection: [
 
 
 /* =========================================================
-   PICK REVIEW LENGTH
-
-   30% SHORT
-   50% MEDIUM
-   20% LONG
+   REVIEW LENGTH
 ========================================================= */
 
 function pickLength() {
 
   const roll =
     Math.random() * 100;
+
+  /*
+    SHORT  = 30%
+    MEDIUM = 50%
+    LONG   = 20%
+  */
 
   if (roll < 30) {
     return "short";
@@ -1507,7 +1528,6 @@ function pickLength() {
   }
 
   return "long";
-
 }
 
 
@@ -1575,13 +1595,19 @@ function getHighlightCount(
 
 
 /* =========================================================
-   OPTIONAL CONNECTOR
+   CONNECTOR
 ========================================================= */
 
 function addConnector(
   sentence,
   index
 ) {
+
+  /*
+    Keep many sentences independent
+    so the review does not feel
+    mechanically connected.
+  */
 
   if (
     index === 0 ||
@@ -1612,7 +1638,7 @@ function addConnector(
 
 
 /* =========================================================
-   CLEAN PERSONAL DETAIL
+   PERSONAL DETAIL
 ========================================================= */
 
 function cleanPersonalDetail(text) {
@@ -1641,7 +1667,6 @@ function cleanPersonalDetail(text) {
 
 
   return cleaned;
-
 }
 
 
@@ -1652,7 +1677,7 @@ function cleanPersonalDetail(text) {
 function generateReview() {
 
 
-  /* GET SELECTED OPTIONS */
+  /* SELECTED OPTIONS */
 
   const selected = [
 
@@ -1698,8 +1723,9 @@ function generateReview() {
 
 
   /*
-    One selected item:
-    keep the review short.
+    One selection:
+    don't create an artificially
+    long review.
   */
 
   if (
@@ -1707,14 +1733,15 @@ function generateReview() {
     personal === ""
   ) {
 
-    reviewLength = "short";
+    reviewLength =
+      "short";
 
   }
 
 
   /*
-    Two selected items:
-    avoid artificially long reviews.
+    Two selections:
+    cap at medium.
   */
 
   if (
@@ -1722,18 +1749,19 @@ function generateReview() {
     reviewLength === "long"
   ) {
 
-    reviewLength = "medium";
+    reviewLength =
+      "medium";
 
   }
 
 
-  /* RANDOMIZE SELECTED ITEMS */
+  /* RANDOMIZE SELECTION ORDER */
 
   const shuffled =
     shuffle(selected);
 
 
-  /* DETERMINE NUMBER OF HIGHLIGHTS */
+  /* NUMBER OF HIGHLIGHTS */
 
   const highlightCount =
     getHighlightCount(
@@ -1742,7 +1770,7 @@ function generateReview() {
     );
 
 
-  /* PICK HIGHLIGHTS */
+  /* CHOOSE HIGHLIGHTS */
 
   const chosen =
     shuffled.slice(
@@ -1777,8 +1805,8 @@ function generateReview() {
 
 
   /*
-    Short reviews occasionally
-    skip the standard opening.
+    SHORT reviews sometimes
+    skip the opening.
   */
 
   if (
@@ -1793,7 +1821,7 @@ function generateReview() {
   }
 
 
-  /* ADD SELECTED DETAILS */
+  /* ADD HIGHLIGHTS */
 
   detailSentences
   .forEach(function(sentence) {
@@ -1803,7 +1831,7 @@ function generateReview() {
   });
 
 
-  /* ADD PERSONAL DETAIL */
+  /* ADD USER'S OWN DETAIL */
 
   if (personal !== "") {
 
@@ -1815,8 +1843,8 @@ function generateReview() {
 
 
   /*
-    Short reviews sometimes
-    finish without a formal ending.
+    SHORT reviews sometimes
+    skip the ending.
   */
 
   if (
@@ -1832,8 +1860,8 @@ function generateReview() {
 
 
   /*
-    Make sure review is not
-    only one sentence.
+    NEVER RETURN ONLY
+    ONE SENTENCE
   */
 
   if (parts.length === 1) {
@@ -1870,14 +1898,15 @@ function generateReview() {
   );
 
 
-  /* CLEAR OLD COPY MESSAGE */
+  /* CLEAR OLD MESSAGE */
 
   document
   .getElementById("copymsg")
-  .textContent = "";
+  .textContent =
+    "";
 
 
-  /* SCROLL TO RESULT */
+  /* SCROLL */
 
   result.scrollIntoView({
 
@@ -1994,7 +2023,6 @@ document
 );
 
 </script>
-
 
 </body>
 </html>
