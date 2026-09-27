@@ -9,10 +9,6 @@
 
 <style>
 
-/* =========================================================
-   BASE
-========================================================= */
-
 * {
   box-sizing: border-box;
 }
@@ -29,14 +25,13 @@ body {
 }
 
 
-/* =========================================================
+/* =========================
    HERO
-========================================================= */
+========================= */
 
 .hero {
   width: 100%;
   height: 235px;
-
   position: relative;
 
   background:
@@ -54,13 +49,6 @@ body {
   overflow: hidden;
 }
 
-
-/* =========================================================
-   LOGO
-   NEW CLASS — NO OLD .logo CLASS
-   ALWAYS AT IMAGE BOTTOM RIGHT
-========================================================= */
-
 .hero-logo-right {
   position: absolute !important;
 
@@ -72,7 +60,6 @@ body {
 
   width: 230px;
   max-width: 38%;
-
   height: auto !important;
 
   display: block;
@@ -86,9 +73,9 @@ body {
 }
 
 
-/* =========================================================
+/* =========================
    TITLE
-========================================================= */
+========================= */
 
 .hero-copy,
 .container {
@@ -99,26 +86,20 @@ body {
 
 .hero-copy {
   padding: 28px 44px 26px;
-
-  border-bottom:
-    1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
 .hero-copy h1 {
   margin: 0;
-
-  font-size:
-    clamp(38px, 5vw, 56px);
-
+  font-size: clamp(38px, 5vw, 56px);
   line-height: 1.04;
-
   letter-spacing: -1.5px;
 }
 
 
-/* =========================================================
+/* =========================
    MAIN
-========================================================= */
+========================= */
 
 .container {
   padding: 28px 44px 72px;
@@ -126,10 +107,7 @@ body {
 
 .intro {
   margin-bottom: 36px;
-
-  color:
-    rgba(255,255,255,.68);
-
+  color: rgba(255,255,255,.68);
   line-height: 1.6;
 }
 
@@ -139,126 +117,91 @@ body {
 
 .step {
   margin-bottom: 9px;
-
   color: #d5ac65;
-
   font-size: 12px;
   font-weight: 700;
-
   letter-spacing: 1.7px;
-
   text-transform: uppercase;
 }
 
 .section h2 {
   margin: 0 0 7px;
-
   font-size: 26px;
 }
 
 .desc {
   margin-bottom: 18px;
-
-  color:
-    rgba(255,255,255,.48);
-
+  color: rgba(255,255,255,.48);
   font-size: 14px;
-
   line-height: 1.5;
 }
 
 
-/* =========================================================
+/* =========================
    OPTIONS
-========================================================= */
+========================= */
 
 .options {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
+  grid-template-columns: repeat(3, minmax(0,1fr));
   gap: 12px;
 }
 
 .option {
   min-height: 58px;
-
   padding: 15px 16px;
 
-  border:
-    1px solid rgba(255,255,255,.16);
-
+  border: 1px solid rgba(255,255,255,.16);
   border-radius: 9px;
 
-  background:
-    rgba(255,255,255,.04);
-
-  color:
-    rgba(255,255,255,.94);
+  background: rgba(255,255,255,.04);
+  color: rgba(255,255,255,.94);
 
   text-align: left;
 
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
 
   cursor: pointer;
 
-  transition: .2s ease;
+  transition:
+    background .2s ease,
+    border-color .2s ease,
+    color .2s ease;
 }
 
 .option:hover {
-  background:
-    rgba(255,255,255,.09);
+  background: rgba(255,255,255,.09);
 }
 
 .option.selected {
   background: #d0aa63;
-
   border-color: #d0aa63;
-
   color: #111;
-
   font-weight: 700;
 }
 
 
-/* =========================================================
+/* =========================
    TEXTAREA
-========================================================= */
+========================= */
 
 textarea {
   width: 100%;
-
   min-height: 100px;
-
   padding: 15px;
 
-  border:
-    1px solid rgba(255,255,255,.16);
-
+  border: 1px solid rgba(255,255,255,.16);
   border-radius: 8px;
 
   outline: none;
-
   resize: vertical;
 
-  background:
-    rgba(255,255,255,.04);
-
+  background: rgba(255,255,255,.04);
   color: #fff;
 
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-
   line-height: 1.55;
 }
 
@@ -268,59 +211,46 @@ textarea:focus {
 
 .count {
   margin-top: 7px;
-
-  color:
-    rgba(255,255,255,.50);
-
+  color: rgba(255,255,255,.50);
   font-size: 12px;
 }
 
 
-/* =========================================================
+/* =========================
    GENERATE BUTTON
-========================================================= */
+========================= */
 
 .primary {
   width: 100%;
-
   min-height: 54px;
 
   border: 0;
-
   border-radius: 7px;
 
   background: #d7ad60;
-
   color: #111;
 
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-
   font-weight: 700;
 
   cursor: pointer;
 }
 
 
-/* =========================================================
+/* =========================
    RESULT
-========================================================= */
+========================= */
 
 .result {
   display: none;
 
   margin-top: 22px;
-
   padding: 24px;
 
   border-radius: 12px;
 
   background: #f4f1eb;
-
   color: #191919;
 }
 
@@ -330,92 +260,65 @@ textarea:focus {
 
 .label {
   color: #c69a51;
-
   font-size: 11px;
-
   font-weight: 700;
-
   letter-spacing: 1.3px;
-
   text-transform: uppercase;
 }
 
 .result h3 {
   margin: 6px 0 14px;
-
   font-size: 23px;
 }
 
 .result textarea {
   min-height: 140px;
-
   background: #fff;
-
   color: #222;
-
   border-color: #d7d3cc;
 }
 
 .help {
   margin-top: 7px;
-
   color: #78716a;
-
   font-size: 12px;
 }
 
 
-/* =========================================================
+/* =========================
    ACTIONS
-========================================================= */
+========================= */
 
 .actions {
   display: grid;
-
-  grid-template-columns:
-    1fr 1fr 1.45fr;
-
+  grid-template-columns: 1fr 1fr 1.45fr;
   gap: 10px;
-
   margin-top: 13px;
 }
 
 .secondary,
 .yelp {
   min-height: 48px;
-
   border-radius: 7px;
 
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
-
   font-weight: 700;
 }
 
 .secondary {
-  border:
-    1px solid #d2cec7;
-
+  border: 1px solid #d2cec7;
   background: #fff;
-
   color: #222;
-
   cursor: pointer;
 }
 
 .yelp {
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   background: #d32323;
-
   color: #fff;
 
   text-decoration: none;
@@ -423,38 +326,31 @@ textarea:focus {
 
 .copymsg {
   min-height: 17px;
-
   margin-top: 9px;
 
   color: #6f955e;
 
   text-align: center;
-
   font-size: 12px;
-
   font-weight: 600;
 }
 
 
-/* =========================================================
+/* =========================
    FOOTER
-========================================================= */
+========================= */
 
 .footer {
   margin-top: 26px;
-
   text-align: center;
-
-  color:
-    rgba(255,255,255,.36);
-
+  color: rgba(255,255,255,.36);
   font-size: 13px;
 }
 
 
-/* =========================================================
+/* =========================
    TABLET
-========================================================= */
+========================= */
 
 @media (max-width: 900px) {
 
@@ -463,86 +359,60 @@ textarea:focus {
   }
 
   .hero-logo-right {
-    position: absolute !important;
-
     right: 0 !important;
     bottom: 0 !important;
-
     left: auto !important;
     top: auto !important;
 
     width: 190px !important;
-
-    transform: none !important;
   }
 
   .hero-copy {
-    padding:
-      26px 28px 24px;
+    padding: 26px 28px 24px;
   }
 
   .container {
-    padding:
-      28px 28px 64px;
+    padding: 28px 28px 64px;
   }
 
   .options {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2,1fr);
   }
 
   .actions {
-    grid-template-columns:
-      1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .yelp {
-    grid-column:
-      1 / -1;
+    grid-column: 1 / -1;
   }
 
 }
 
 
-/* =========================================================
+/* =========================
    MOBILE
-   STILL BOTTOM RIGHT
-========================================================= */
+========================= */
 
 @media (max-width: 560px) {
 
   .hero {
     height: 190px;
-
-    background-position:
-      center 46%;
+    background-position: center 46%;
   }
 
   .hero-logo-right {
-    position: absolute !important;
-
     right: 0 !important;
     bottom: 0 !important;
-
     left: auto !important;
     top: auto !important;
 
     width: 145px !important;
     max-width: 48% !important;
-
-    height: auto !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    transform: none !important;
-
-    z-index: 10;
   }
 
   .hero-copy {
-    padding:
-      22px 18px 20px;
+    padding: 22px 18px 20px;
   }
 
   .hero-copy h1 {
@@ -550,8 +420,7 @@ textarea:focus {
   }
 
   .container {
-    padding:
-      26px 17px 58px;
+    padding: 26px 17px 58px;
   }
 
   .intro {
@@ -573,10 +442,9 @@ textarea:focus {
 }
 
 
-/* =========================================================
+/* =========================
    SMALL MOBILE
-   STILL BOTTOM RIGHT
-========================================================= */
+========================= */
 
 @media (max-width: 390px) {
 
@@ -585,22 +453,12 @@ textarea:focus {
   }
 
   .hero-logo-right {
-    position: absolute !important;
-
     right: 0 !important;
     bottom: 0 !important;
-
     left: auto !important;
     top: auto !important;
 
     width: 135px !important;
-
-    height: auto !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    transform: none !important;
   }
 
   .actions {
@@ -620,10 +478,6 @@ textarea:focus {
 <body>
 
 
-<!-- =======================================================
-     HERO
-======================================================= -->
-
 <section class="hero">
 
   <img
@@ -635,11 +489,6 @@ textarea:focus {
 </section>
 
 
-
-<!-- =======================================================
-     TITLE
-======================================================= -->
-
 <section class="hero-copy">
 
   <h1>
@@ -648,11 +497,6 @@ textarea:focus {
 
 </section>
 
-
-
-<!-- =======================================================
-     MAIN
-======================================================= -->
 
 <main class="container">
 
@@ -665,10 +509,9 @@ textarea:focus {
 </div>
 
 
-
-<!-- =======================================================
+<!-- =========================
      STEP 1
-======================================================= -->
+========================= -->
 
 <section class="section">
 
@@ -687,64 +530,38 @@ textarea:focus {
 
 <div class="options">
 
-
-<button
-  class="option"
-  data-value="meat"
->
+<button class="option" data-value="meat">
 🥩 High-Quality Meat
 </button>
 
-
-<button
-  class="option"
-  data-value="service"
->
+<button class="option" data-value="service">
 🙌 Friendly Service
 </button>
 
-
-<button
-  class="option"
-  data-value="variety"
->
+<button class="option" data-value="variety">
 🍽️ Great Variety
 </button>
 
-
-<button
-  class="option"
-  data-value="atmosphere"
->
+<button class="option" data-value="atmosphere">
 ✨ Nice Atmosphere
 </button>
 
-
-<button
-  class="option"
-  data-value="value"
->
+<button class="option" data-value="value">
 💯 Good Value
 </button>
 
-
-<button
-  class="option"
-  data-value="fresh"
->
+<button class="option" data-value="fresh">
 🌿 Fresh Ingredients
 </button>
-
 
 </div>
 
 </section>
 
 
-
-<!-- =======================================================
+<!-- =========================
      STEP 2
-======================================================= -->
+========================= -->
 
 <section class="section">
 
@@ -757,70 +574,56 @@ textarea:focus {
 </h2>
 
 <div class="desc">
-  Pick the parts of the menu you enjoyed most.
+  Pick the food and features you enjoyed most.
 </div>
 
 
 <div class="options">
 
-
-<button
-  class="option"
-  data-value="premium"
->
+<button class="option" data-value="premium">
 ⭐ Premium Cuts
 </button>
 
-
-<button
-  class="option"
-  data-value="beef"
->
+<button class="option" data-value="beef">
 🐂 Beef
 </button>
 
-
-<button
-  class="option"
-  data-value="pork"
->
+<button class="option" data-value="pork">
 🐖 Pork
 </button>
 
+<button class="option" data-value="chicken">
+🍗 Chicken
+</button>
 
-<button
-  class="option"
-  data-value="seafood"
->
+<button class="option" data-value="seafood">
 🦐 Seafood
 </button>
 
-
-<button
-  class="option"
-  data-value="sides"
->
-🍲 Side Dishes
+<button class="option" data-value="smallbites">
+🥟 Small Bites from the Kitchen
 </button>
 
+<button class="option" data-value="veggiebar">
+🥬 Self-Serve Vegetable &amp; Condiment Bar
+</button>
 
-<button
-  class="option"
-  data-value="selection"
->
+<button class="option" data-value="tablet">
+📱 Easy Tablet Ordering
+</button>
+
+<button class="option" data-value="selection">
 📋 Overall Selection
 </button>
-
 
 </div>
 
 </section>
 
 
-
-<!-- =======================================================
+<!-- =========================
      STEP 3
-======================================================= -->
+========================= -->
 
 <section class="section">
 
@@ -840,25 +643,16 @@ textarea:focus {
 <textarea
   id="extra"
   maxlength="220"
-  placeholder="Example: Came here with friends for dinner and really liked the brisket..."
+  placeholder="Example: Came here with friends and really enjoyed the experience..."
 ></textarea>
 
 
-<div
-  class="count"
-  id="count"
->
+<div class="count" id="count">
 0 / 220
 </div>
 
-
 </section>
 
-
-
-<!-- =======================================================
-     GENERATE
-======================================================= -->
 
 <button
   class="primary"
@@ -868,30 +662,22 @@ Generate My Review
 </button>
 
 
-
-<!-- =======================================================
+<!-- =========================
      RESULT
-======================================================= -->
+========================= -->
 
-<div
-  class="result"
-  id="result"
->
-
+<div class="result" id="result">
 
 <div class="label">
   Your Review
 </div>
-
 
 <h3>
   Ready to share
 </h3>
 
 
-<textarea
-  id="output"
-></textarea>
+<textarea id="output"></textarea>
 
 
 <div class="help">
@@ -900,7 +686,6 @@ Generate My Review
 
 
 <div class="actions">
-
 
 <button
   class="secondary"
@@ -927,7 +712,6 @@ Try Another
 Continue to Yelp
 </a>
 
-
 </div>
 
 
@@ -936,9 +720,7 @@ Continue to Yelp
   id="copymsg"
 ></div>
 
-
 </div>
-
 
 
 <div class="footer">
@@ -949,8 +731,8 @@ Continue to Yelp
 </main>
 
 
-
 <script>
+
 
 /* =========================================================
    HELPERS
@@ -993,6 +775,67 @@ function shuffle(array) {
   }
 
   return copy;
+
+}
+
+
+/* =========================================================
+   VISIT TIME
+
+   Monday - Thursday:
+   Dinner
+
+   Friday - Sunday:
+   Before 5 PM = Lunch
+   5 PM onward = Dinner
+========================================================= */
+
+function getVisitPeriod() {
+
+  const now = new Date();
+
+  const day =
+    now.getDay();
+
+  const hour =
+    now.getHours();
+
+
+  /*
+    0 = Sunday
+    1 = Monday
+    2 = Tuesday
+    3 = Wednesday
+    4 = Thursday
+    5 = Friday
+    6 = Saturday
+  */
+
+
+  /* Monday - Thursday */
+
+  if (
+    day >= 1 &&
+    day <= 4
+  ) {
+
+    return "dinner";
+
+  }
+
+
+  /* Friday - Sunday before 5 PM */
+
+  if (hour < 17) {
+
+    return "lunch";
+
+  }
+
+
+  /* Friday - Sunday 5 PM onward */
+
+  return "dinner";
 
 }
 
@@ -1043,20 +886,86 @@ extra.addEventListener(
 
 
 /* =========================================================
-   OPENINGS — 12
+   LUNCH OPENINGS
 ========================================================= */
 
-const openings = [
+const lunchOpenings = [
 
-  "Really enjoyed our meal at ONIKU.",
+  "Really enjoyed lunch at ONIKU.",
+
+  "Had a great lunch at ONIKU.",
+
+  "We had a really nice lunch at ONIKU.",
+
+  "Stopped by ONIKU for lunch and really enjoyed it.",
+
+  "We had such an enjoyable lunch here.",
+
+  "ONIKU was a great choice for lunch.",
+
+  "Really glad we decided to come here for lunch.",
+
+  "We had a great experience at ONIKU this afternoon.",
+
+  "Our lunch at ONIKU turned out to be a really good experience.",
+
+  "We really enjoyed our afternoon meal at ONIKU.",
+
+  "Had a very enjoyable lunch here.",
+
+  "We had a great time at ONIKU for lunch."
+
+];
+
+
+/* =========================================================
+   DINNER OPENINGS
+========================================================= */
+
+const dinnerOpenings = [
+
+  "Really enjoyed dinner at ONIKU.",
 
   "Had a great dinner at ONIKU.",
 
-  "We had a really nice experience at ONIKU.",
+  "We had a really nice dinner at ONIKU.",
 
   "Came to ONIKU for dinner and had a great time.",
 
   "We stopped by ONIKU for dinner and really enjoyed the experience.",
+
+  "Had a really enjoyable dinner here at ONIKU.",
+
+  "We came to ONIKU for dinner and left very happy with the experience.",
+
+  "Really glad we decided to try ONIKU for dinner.",
+
+  "Our dinner at ONIKU turned out to be a really good experience.",
+
+  "We had a fun and enjoyable dinner at ONIKU.",
+
+  "ONIKU was a great choice for dinner.",
+
+  "We really enjoyed our dinner at ONIKU."
+
+];
+
+
+/* =========================================================
+   NEUTRAL OPENINGS
+========================================================= */
+
+const neutralOpenings = [
+
+  "Really enjoyed our meal at ONIKU.",
+
+  "Had a great meal at ONIKU.",
+
+  "We had a really nice experience at ONIKU.",
+
+  "Came to ONIKU and had a great time.",
+
+  "We stopped by ONIKU and really enjoyed the experience.",
 
   "Had a really enjoyable meal here at ONIKU.",
 
@@ -1064,9 +973,9 @@ const openings = [
 
   "Really glad we decided to try ONIKU.",
 
-  "Our dinner at ONIKU turned out to be a really good experience.",
+  "Our visit to ONIKU turned out to be a really good experience.",
 
-  "We had a fun and enjoyable dinner at ONIKU.",
+  "We had a fun and enjoyable time at ONIKU.",
 
   "ONIKU was a great choice for our meal.",
 
@@ -1076,7 +985,45 @@ const openings = [
 
 
 /* =========================================================
-   ENDINGS — 12
+   SMART OPENING
+
+   55% = time-specific
+   45% = neutral
+========================================================= */
+
+function getSmartOpening() {
+
+  const period =
+    getVisitPeriod();
+
+
+  if (Math.random() < .55) {
+
+    if (period === "lunch") {
+
+      return randomItem(
+        lunchOpenings
+      );
+
+    }
+
+
+    return randomItem(
+      dinnerOpenings
+    );
+
+  }
+
+
+  return randomItem(
+    neutralOpenings
+  );
+
+}
+
+
+/* =========================================================
+   ENDINGS
 ========================================================= */
 
 const endings = [
@@ -1099,7 +1046,7 @@ const endings = [
 
   "Overall, it was a very enjoyable meal.",
 
-  "We'd definitely keep ONIKU in mind for another dinner.",
+  "We'd definitely keep ONIKU in mind for another meal.",
 
   "Everything came together for a really enjoyable experience.",
 
@@ -1139,15 +1086,12 @@ const connectors = [
 
 /* =========================================================
    PHRASE BANK
-   12 PHRASES PER OPTION
 ========================================================= */
 
 const phrases = {
 
 
-/* ---------------------------------------------------------
-   HIGH-QUALITY MEAT
---------------------------------------------------------- */
+/* HIGH-QUALITY MEAT */
 
 meat: [
 
@@ -1178,9 +1122,7 @@ meat: [
 ],
 
 
-/* ---------------------------------------------------------
-   FRIENDLY SERVICE
---------------------------------------------------------- */
+/* FRIENDLY SERVICE */
 
 service: [
 
@@ -1211,25 +1153,23 @@ service: [
 ],
 
 
-/* ---------------------------------------------------------
-   GREAT VARIETY
---------------------------------------------------------- */
+/* GREAT VARIETY */
 
 variety: [
 
   "There was a great variety of options to choose from.",
 
-  "We liked having so many different meats and sides to try.",
+  "We liked having so many different things to try.",
 
   "The variety made it easy to try a little bit of everything.",
 
-  "There were plenty of choices, so everyone at the table found something they liked.",
+  "There were plenty of choices throughout the meal.",
 
-  "We enjoyed being able to switch between different cuts and dishes throughout the meal.",
+  "We enjoyed being able to switch between different cuts and dishes.",
 
   "The menu had enough variety to keep the meal interesting.",
 
-  "There was a good mix of options for the whole table.",
+  "There was a good mix of options available.",
 
   "We liked that there were so many different things to choose from.",
 
@@ -1239,14 +1179,12 @@ variety: [
 
   "The range of options gave us a chance to try several different items.",
 
-  "There was enough variety that everyone could find their own favorites."
+  "There was enough variety to keep us interested throughout the meal."
 
 ],
 
 
-/* ---------------------------------------------------------
-   NICE ATMOSPHERE
---------------------------------------------------------- */
+/* NICE ATMOSPHERE */
 
 atmosphere: [
 
@@ -1256,7 +1194,7 @@ atmosphere: [
 
   "We really liked the overall vibe of the restaurant.",
 
-  "The atmosphere made it a nice place to sit down and enjoy dinner.",
+  "The atmosphere made it a nice place to sit down and enjoy a meal.",
 
   "The space felt modern without being too formal.",
 
@@ -1266,7 +1204,7 @@ atmosphere: [
 
   "The dining room felt clean and well put together.",
 
-  "The atmosphere worked really well for a relaxed dinner.",
+  "The atmosphere worked really well for a relaxed meal.",
 
   "We enjoyed the overall look and feel of the restaurant.",
 
@@ -1277,9 +1215,7 @@ atmosphere: [
 ],
 
 
-/* ---------------------------------------------------------
-   GOOD VALUE
---------------------------------------------------------- */
+/* GOOD VALUE */
 
 value: [
 
@@ -1310,9 +1246,7 @@ value: [
 ],
 
 
-/* ---------------------------------------------------------
-   FRESH INGREDIENTS
---------------------------------------------------------- */
+/* FRESH INGREDIENTS */
 
 fresh: [
 
@@ -1343,9 +1277,7 @@ fresh: [
 ],
 
 
-/* ---------------------------------------------------------
-   PREMIUM CUTS
---------------------------------------------------------- */
+/* PREMIUM CUTS */
 
 premium: [
 
@@ -1365,9 +1297,9 @@ premium: [
 
   "We really liked the quality of the premium selections.",
 
-  "The premium meats were a highlight for our table.",
+  "The premium meats were a highlight for us.",
 
-  "Trying the different premium cuts was one of the most enjoyable parts of dinner.",
+  "Trying the different premium cuts was one of the most enjoyable parts of the meal.",
 
   "The premium options were definitely worth trying.",
 
@@ -1376,9 +1308,7 @@ premium: [
 ],
 
 
-/* ---------------------------------------------------------
-   BEEF
---------------------------------------------------------- */
+/* BEEF */
 
 beef: [
 
@@ -1402,20 +1332,18 @@ beef: [
 
   "We especially liked the texture and flavor of the beef.",
 
-  "The different beef cuts were fun to compare and all cooked well on the grill.",
+  "The different beef cuts were fun to compare and cooked well on the grill.",
 
   "We ended up ordering more beef because we enjoyed it so much."
 
 ],
 
 
-/* ---------------------------------------------------------
-   PORK
---------------------------------------------------------- */
+/* PORK */
 
 pork: [
 
-  "We also really enjoyed the pork selections.",
+  "We really enjoyed the pork selections.",
 
   "The pork grilled up nicely and had a lot of flavor.",
 
@@ -1425,9 +1353,9 @@ pork: [
 
   "The pork was flavorful and cooked really well on the grill.",
 
-  "A couple of the pork options ended up being favorites at our table.",
+  "A couple of the pork options ended up being favorites.",
 
-  "We liked having different pork choices to mix in between the beef.",
+  "We liked having different pork choices to mix in with the other meats.",
 
   "The pork selections were tender and enjoyable.",
 
@@ -1442,9 +1370,38 @@ pork: [
 ],
 
 
-/* ---------------------------------------------------------
-   SEAFOOD
---------------------------------------------------------- */
+/* CHICKEN */
+
+chicken: [
+
+  "We really enjoyed the chicken selections as well.",
+
+  "The chicken cooked up nicely and had plenty of flavor.",
+
+  "The chicken options were a nice addition to the meat selection.",
+
+  "We tried some of the chicken and really enjoyed it.",
+
+  "The chicken was flavorful and cooked really well on the grill.",
+
+  "The chicken gave us another good option between the different cuts of meat.",
+
+  "We liked having chicken available alongside the beef and pork.",
+
+  "The chicken selections added even more variety to the meal.",
+
+  "A few of the chicken options were especially enjoyable.",
+
+  "The chicken was a nice change of pace during the meal.",
+
+  "We would definitely order the chicken again on another visit.",
+
+  "Having chicken among the BBQ choices made the selection feel even more complete."
+
+],
+
+
+/* SEAFOOD */
 
 seafood: [
 
@@ -1468,49 +1425,107 @@ seafood: [
 
   "We appreciated having seafood choices in addition to the BBQ meats.",
 
-  "The seafood options gave us even more things to try at the table.",
+  "The seafood options gave us even more things to try.",
 
   "Mixing in some seafood made the meal feel even more varied."
 
 ],
 
 
-/* ---------------------------------------------------------
-   SIDE DISHES
---------------------------------------------------------- */
+/* SMALL BITES */
 
-sides: [
+smallbites: [
 
-  "The side dishes were also a nice part of the meal.",
+  "The small bites from the kitchen were a great addition to the meal.",
 
-  "The sides complemented the BBQ really well.",
+  "We really enjoyed trying the different small bites from the kitchen.",
 
-  "The side dishes made the meal feel more complete.",
+  "The kitchen items gave us something different to enjoy between rounds of BBQ.",
 
-  "We enjoyed having different sides to eat between rounds of meat.",
+  "A few of the small bites from the kitchen ended up being some of our favorites.",
 
-  "The sides were a nice addition and gave us even more variety.",
+  "We liked having prepared kitchen items in addition to the meats for grilling.",
 
-  "A few of the side dishes ended up being favorites at the table.",
+  "The small bites added another layer of variety to the overall experience.",
 
-  "The side dishes paired nicely with everything we grilled.",
+  "It was nice being able to order small bites from the kitchen throughout the meal.",
 
-  "We liked being able to mix the meats with different sides throughout the meal.",
+  "The kitchen selections paired really well with the BBQ.",
 
-  "The sides helped balance out the BBQ and kept the meal interesting.",
+  "We enjoyed mixing in some of the small bites between rounds of meat.",
 
-  "There were several side dishes we would happily order again.",
+  "The small bites made the overall menu feel more complete.",
 
-  "The variety of sides was a nice complement to the main selections.",
+  "There were some really enjoyable kitchen items to try alongside the BBQ.",
 
-  "We appreciated that the side dishes felt like a real part of the meal rather than an afterthought."
+  "Having small bites from the kitchen gave us even more options to explore."
 
 ],
 
 
-/* ---------------------------------------------------------
-   OVERALL SELECTION
---------------------------------------------------------- */
+/* VEGETABLE & CONDIMENT BAR */
+
+veggiebar: [
+
+  "We really liked the self-serve vegetable and condiment bar.",
+
+  "The self-serve vegetable and condiment bar was a convenient part of the experience.",
+
+  "It was nice being able to choose our own vegetables and condiments.",
+
+  "We enjoyed being able to customize the meal with items from the self-serve bar.",
+
+  "The vegetable and condiment bar made it easy to grab exactly what we wanted.",
+
+  "Having a self-serve bar for vegetables and condiments was really convenient.",
+
+  "We liked being able to go back to the vegetable and condiment bar whenever we wanted.",
+
+  "The self-serve setup made it easy to add different vegetables and condiments throughout the meal.",
+
+  "The vegetable and condiment bar added another nice element to the AYCE experience.",
+
+  "We appreciated having easy access to vegetables and condiments during the meal.",
+
+  "Being able to choose our own vegetables and condiments made the experience feel more customizable.",
+
+  "The self-serve vegetable and condiment bar was a nice complement to the BBQ and shabu shabu."
+
+],
+
+
+/* TABLET ORDERING */
+
+tablet: [
+
+  "Ordering from the tablet was simple and convenient.",
+
+  "We liked how easy it was to order directly from the tablet.",
+
+  "The tablet made it convenient to order more items throughout the meal.",
+
+  "The tablet ordering system made the whole experience feel smooth.",
+
+  "It was easy to browse the options and place additional orders from the tablet.",
+
+  "We appreciated being able to order at our own pace using the tablet.",
+
+  "The tablet made it simple to add more items whenever we were ready.",
+
+  "Ordering from the tablet was straightforward and easy to use.",
+
+  "We liked not having to wait to place another order because the tablet was right there.",
+
+  "The tablet ordering system was a convenient part of the AYCE experience.",
+
+  "Being able to order from the tablet made the meal feel relaxed and efficient.",
+
+  "The easy tablet ordering helped keep everything moving smoothly throughout the meal."
+
+],
+
+
+/* OVERALL SELECTION */
 
 selection: [
 
@@ -1522,7 +1537,7 @@ selection: [
 
   "The overall menu gave us a lot of different things to explore.",
 
-  "There were enough options to keep everyone at the table happy.",
+  "There were plenty of options to choose from.",
 
   "We never felt short on choices during the meal.",
 
@@ -1545,6 +1560,10 @@ selection: [
 
 /* =========================================================
    REVIEW LENGTH
+
+   30% Short
+   50% Medium
+   20% Long
 ========================================================= */
 
 function pickLength() {
@@ -1553,20 +1572,17 @@ function pickLength() {
     Math.random() * 100;
 
 
-  /*
-    30% SHORT
-    50% MEDIUM
-    20% LONG
-  */
-
-
   if (roll < 30) {
+
     return "short";
+
   }
 
 
   if (roll < 80) {
+
     return "medium";
+
   }
 
 
@@ -1584,15 +1600,12 @@ function getHighlightCount(
   totalSelected
 ) {
 
-
   if (totalSelected <= 1) {
 
     return totalSelected;
 
   }
 
-
-  /* SHORT */
 
   if (length === "short") {
 
@@ -1605,8 +1618,6 @@ function getHighlightCount(
 
   }
 
-
-  /* MEDIUM */
 
   if (length === "medium") {
 
@@ -1625,8 +1636,6 @@ function getHighlightCount(
 
   }
 
-
-  /* LONG */
 
   const possible = [
     4,
@@ -1653,7 +1662,6 @@ function addConnector(
   sentence,
   index
 ) {
-
 
   if (
     index === 0 ||
@@ -1688,7 +1696,6 @@ function addConnector(
 ========================================================= */
 
 function cleanPersonalDetail(text) {
-
 
   let cleaned =
     text.trim();
@@ -1727,8 +1734,6 @@ function cleanPersonalDetail(text) {
 function generateReview() {
 
 
-  /* SELECTED OPTIONS */
-
   const selected = [
 
     ...document.querySelectorAll(
@@ -1742,15 +1747,11 @@ function generateReview() {
   });
 
 
-  /* PERSONAL DETAIL */
-
   const personal =
     cleanPersonalDetail(
       extra.value
     );
 
-
-  /* REQUIRE INPUT */
 
   if (
     selected.length === 0 &&
@@ -1766,13 +1767,9 @@ function generateReview() {
   }
 
 
-  /* REVIEW LENGTH */
-
   let reviewLength =
     pickLength();
 
-
-  /* ONE OPTION = SHORT */
 
   if (
     selected.length <= 1 &&
@@ -1785,8 +1782,6 @@ function generateReview() {
   }
 
 
-  /* TWO OPTIONS = MAX MEDIUM */
-
   if (
     selected.length === 2 &&
     reviewLength === "long"
@@ -1798,13 +1793,9 @@ function generateReview() {
   }
 
 
-  /* RANDOM ORDER */
-
   const shuffled =
     shuffle(selected);
 
-
-  /* HOW MANY TO USE */
 
   const highlightCount =
     getHighlightCount(
@@ -1813,16 +1804,12 @@ function generateReview() {
     );
 
 
-  /* PICK HIGHLIGHTS */
-
   const chosen =
     shuffled.slice(
       0,
       highlightCount
     );
 
-
-  /* DETAIL SENTENCES */
 
   const detailSentences =
     chosen.map(
@@ -1844,14 +1831,12 @@ function generateReview() {
     );
 
 
-  /* BUILD REVIEW */
-
   let parts = [];
 
 
   /*
     Short reviews sometimes
-    don't need an opening.
+    skip the opening.
   */
 
   if (
@@ -1860,13 +1845,11 @@ function generateReview() {
   ) {
 
     parts.push(
-      randomItem(openings)
+      getSmartOpening()
     );
 
   }
 
-
-  /* DETAILS */
 
   detailSentences
   .forEach(function(sentence) {
@@ -1875,8 +1858,6 @@ function generateReview() {
 
   });
 
-
-  /* USER DETAIL */
 
   if (personal !== "") {
 
@@ -1889,7 +1870,7 @@ function generateReview() {
 
   /*
     Short reviews sometimes
-    don't need a formal ending.
+    skip the ending.
   */
 
   if (
@@ -1904,7 +1885,9 @@ function generateReview() {
   }
 
 
-  /* NEVER RETURN ONLY ONE SENTENCE */
+  /*
+    Never return only one sentence.
+  */
 
   if (parts.length === 1) {
 
@@ -1915,8 +1898,6 @@ function generateReview() {
   }
 
 
-  /* FINAL REVIEW */
-
   const finalReview =
     parts.join(" ");
 
@@ -1926,8 +1907,6 @@ function generateReview() {
   .value =
     finalReview;
 
-
-  /* SHOW RESULT */
 
   const result =
     document.getElementById(
@@ -1940,15 +1919,11 @@ function generateReview() {
   );
 
 
-  /* CLEAR OLD COPY MESSAGE */
-
   document
   .getElementById("copymsg")
   .textContent =
     "";
 
-
-  /* SCROLL */
 
   result.scrollIntoView({
 
@@ -1986,7 +1961,7 @@ document
 
 
 /* =========================================================
-   COPY REVIEW
+   COPY
 ========================================================= */
 
 document
@@ -2024,17 +1999,14 @@ document
 
     catch (error) {
 
-
       output.focus();
 
       output.select();
-
 
       output.setSelectionRange(
         0,
         output.value.length
       );
-
 
       document.execCommand(
         "copy"
@@ -2064,7 +2036,6 @@ document
           "Copy Review";
 
       },
-
       1500
     );
 
@@ -2072,7 +2043,6 @@ document
 );
 
 </script>
-
 
 </body>
 </html>
